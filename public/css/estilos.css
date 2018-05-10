@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=ABeeZee:400i|Abril+Fatface|Amatic+SC|IBM+Plex+Sans:300|Indie+Flower|Julius+Sans+One|Lato|Libre+Franklin:200,200i|Lobster|Lora:400i|Monoton|Montserrat|Open+Sans|PT+Serif:400,700|Pacifico|Permanent+Marker|Playfair+Display:400,700|Poiret+One|Questrial|Quicksand:300|Raleway:200,400|Roboto|Rufina|Special+Elite|Spectral:300,400|Ubuntu");
+.parrafo {
+  font-family: "Amatic SC", cursive;
+  font-size: 25px; }
+
+cuadranteImagen .avatar, body .members #member1 #cuadrante1 .avatar, body .members #member2 #cuadrante4 .avatar {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+  transition: 3s; }
+  cuadranteImagen .avatar:hover, body .members #member1 #cuadrante1 .avatar:hover, body .members #member2 #cuadrante4 .avatar:hover {
+    transition: 3s; }
+
+body .titulo {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 45px;
+  padding: 5px; }
+body .subtituloMember {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px; }
+body .members {
+  background-color: whitesmoke; }
+  body .members .cuadrantWrapper {
+    padding: 80px; }
+  body .members #member1 {
+    background-color: #171819;
+    color: whitesmoke; }
+    body .members #member1 #cuadrante1 {
+      padding: 25px;
+      box-sizing: border-box;
+      position: relative; }
+      body .members #member1 #cuadrante1 img {
+        float: left;
+        border-left: 1px solid whitesmoke; }
+    body .members #member1 #cuadrante2 {
+      padding: 25px;
+      box-sizing: border-box; }
+  body .members #member2 #cuadrante4 {
+    position: relative; }
+
+/*# sourceMappingURL=estilos.css.map */
