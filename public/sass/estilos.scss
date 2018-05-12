@@ -29,20 +29,29 @@
 
 
 $black-modern:#171819;
-$parrafo:'Amatic SC', cursive;
+$green-soft:#66E7C2;
+$blue-bright:#1370DE;
+$parrafo:'Libre Franklin', sans-serif;
 
+
+// ANEXOS
 .parrafo{
 	font-family:$parrafo;
-	font-size:25px;
+	font-weight:300;
+	font-size:15px;
+
 }
 
 cuadranteImagen{
-
+	padding:10px;
+	box-sizing:border-box;
 	.avatar{	
-		width:70%;
+		width:40%;
+		min-width:300px;
 		margin:0 auto;
 		display:block;
 		transition:3s;
+		text-align:center;
 		&:hover{
 			transition:3s;
 		}
@@ -50,41 +59,77 @@ cuadranteImagen{
 	}
 }
 
-body{
-	.titulo{
-		font-family: 'Quicksand', sans-serif;
-		font-size:45px;
-		padding:5px;
+.encabezado{
+	.iencabezado{
+		font-size:50px;
 	}
-	.subtituloMember{
+}
 
-		font-family: 'Permanent Marker', cursive;
+.socialIcons{
+	padding:0;
+	list-style:none;
+	li{
+		display:inline-block;
+	}
+	.icon{
+		color:white;
 		font-size:30px;
-
+		padding:5px;
+		transition:0.5s;
+		&:hover{
+			transition:0.6s;
+			color:$green-soft;
+		}
 	}
+
+}
+
+
+// BROOMWEB
+
+body{
+
 	.members{
 	background-color:whitesmoke;
+
+	.triangle{
+		position:absolute;
+		top:0px;
+		left:0px;
+				
+	}
+	.triangle2{
+		position:absolute;
+		bottom:0px;
+		left:0px;
+		width:100%;
+	}	
+
+
 	.cuadrantWrapper{
-		padding:80px;
+		padding:70px 250px 10px 250px;
+		@media screen and (max-width:600px){
+			padding:10px;
+		}
 	}
 		#member1{
-
+			position:relative;
 			background-color:$black-modern;
 			color:whitesmoke;
-			#cuadrante1{
-				padding:25px;
-				box-sizing:border-box;
-				position:relative;
-				@extend cuadranteImagen;
-				img{
-					float:left;
-					border-left:1px solid whitesmoke;
-				}	
+			text-align:right;
 
+			#cuadrante1{
+				@extend cuadranteImagen;
 			}
-			#cuadrante2{
-				padding:25px;
-				box-sizing:border-box;
+
+			#cuadrante2{			
+
+				padding-top: 70px;
+				box-sizing: border-box;
+				padding: 70px 10px;
+				.nombretrabajo{
+					color:$green-soft;
+				}				
 			}
 			
 			
@@ -92,11 +137,29 @@ body{
 
 
 		#member2{
+			text-align:right;
+			.cuadrantWrapper{
+				padding:0px 250px 10px 250px;
+			}
+			#cuadrante3{
+				padding: 70px 10px;
+				box-sizing: border-box;
+				.nombretrabajo{
+					color:$blue-bright;
+				}		
+				.icon{
+					color:black;
+					&:hover{
+						color:$blue-bright;
+					}
+				}
+
+			}
 			#cuadrante4{
-				position:relative;
 				@extend cuadranteImagen;
 			}
 
 		}
+
 	}
 }
