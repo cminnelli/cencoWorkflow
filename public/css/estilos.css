@@ -23,6 +23,9 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
 .socialIcons {
   padding: 0;
   list-style: none; }
+  @media screen and (max-width: 800px) {
+    .socialIcons {
+      text-alignt: center; } }
   .socialIcons li {
     display: inline-block; }
   .socialIcons .icon {
@@ -39,7 +42,8 @@ body .members {
   body .members .triangle {
     position: absolute;
     top: 0px;
-    left: 0px; }
+    left: 0px;
+    width: 100%; }
   body .members .triangle2 {
     position: absolute;
     bottom: 0px;
@@ -47,9 +51,10 @@ body .members {
     width: 100%; }
   body .members .cuadrantWrapper {
     padding: 70px 250px 10px 250px; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
       body .members .cuadrantWrapper {
-        padding: 10px; } }
+        padding: 40px;
+        text-alignt: center; } }
   body .members #member1 {
     position: relative;
     background-color: #171819;
@@ -59,12 +64,24 @@ body .members {
       padding-top: 70px;
       box-sizing: border-box;
       padding: 70px 10px; }
+      @media screen and (max-width: 800px) {
+        body .members #member1 #cuadrante2 {
+          padding: 20px; } }
       body .members #member1 #cuadrante2 .nombretrabajo {
         color: #66E7C2; }
+        @media screen and (max-width: 800px) {
+          body .members #member1 #cuadrante2 .nombretrabajo {
+            font-size: 17px;
+            transition: 1s;
+            text-alignt: center; } }
   body .members #member2 {
     text-align: right; }
-    body .members #member2 .cuadrantWrapper {
+    body .members #member2 .cuadranteWrapper {
       padding: 0px 250px 10px 250px; }
+      @media screen and (max-width: 800px) {
+        body .members #member2 .cuadranteWrapper {
+          padding: 40px;
+          text-alignt: center; } }
     body .members #member2 #cuadrante3 {
       padding: 70px 10px;
       box-sizing: border-box; }

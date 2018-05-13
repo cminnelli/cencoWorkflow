@@ -68,6 +68,12 @@ cuadranteImagen{
 .socialIcons{
 	padding:0;
 	list-style:none;
+	@media screen and (max-width:800px){
+		text-alignt:center;
+	}
+
+
+
 	li{
 		display:inline-block;
 	}
@@ -96,6 +102,7 @@ body{
 		position:absolute;
 		top:0px;
 		left:0px;
+		width:100%;
 				
 	}
 	.triangle2{
@@ -103,13 +110,15 @@ body{
 		bottom:0px;
 		left:0px;
 		width:100%;
+
 	}	
 
 
 	.cuadrantWrapper{
 		padding:70px 250px 10px 250px;
-		@media screen and (max-width:600px){
-			padding:10px;
+		@media screen and (max-width:800px){
+			padding:40px;
+			text-alignt:center;
 		}
 	}
 		#member1{
@@ -127,8 +136,17 @@ body{
 				padding-top: 70px;
 				box-sizing: border-box;
 				padding: 70px 10px;
+				@media screen and (max-width:800px){
+					padding:20px;					
+				}
+
 				.nombretrabajo{
 					color:$green-soft;
+					@media screen and (max-width:800px){
+						font-size:17px;
+						transition:1s;
+						text-alignt:center;
+					}
 				}				
 			}
 			
@@ -138,8 +156,14 @@ body{
 
 		#member2{
 			text-align:right;
-			.cuadrantWrapper{
+			.cuadranteWrapper{
 				padding:0px 250px 10px 250px;
+				@media screen and (max-width:800px){
+					padding:40px;
+					text-alignt:center;
+				}
+				
+
 			}
 			#cuadrante3{
 				padding: 70px 10px;

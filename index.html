@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<!-- 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script> -->
 	<link href='imagenes/web/LOGO1.png' rel='shortcut icon' type='image/png'>
 
 
@@ -46,8 +46,10 @@
 	<link href="https://unpkg.com/ionicons@4.0.0/dist/css/ionicons.min.css"rel="stylesheet"/>
 
 <body ng-init="initApp()" ng-app="myApp" ng-controller="mainController">
+<style>
 
-<div id="particles-js"></div>
+</style>
+
 <section class="members">
 		<div class="encabezado text-center">
 			<i class="icon iencabezado ion-md-infinite"></i>
@@ -88,7 +90,7 @@
 		</div>
 
 		<div id="member2" >
-			<div class="cuadrantWrapper">
+			<div class="cuadranteWrapper">
 				<div class="row">
 					<div id="cuadrante3" class="col-xs-12 col-lg-6">
 						<h3 class="font-weight-bold"><i class="icon ion-md-cube"></i> Tomás Minnelli </h3>
@@ -102,7 +104,7 @@
 
 							</ul>
 					</div>
-					<div id="cuadrante4" class="col-xs-12 col-lg-6">						
+					<div id="cuadrante4" class="col-xs-12 col-lg-6 ">						
 						<img class="avatar" src="imagenes/web/tomyAvatar.png" alt="">						
 					</div>
 
@@ -115,16 +117,13 @@
 
 </section>
 
-<style>
-	
-</style>
-
-<script src="/libs/particles.js-master/particles.js-master/particles.min.js"></script>
 <script>
 	particlesJS.load('particles-js', 'js/otros/particles.json', function() {
 	  console.log('callback - particles.js config loaded');
 	});
 </script>
+
+
 
 </body>
 </html>
