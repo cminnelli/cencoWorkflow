@@ -18,7 +18,7 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
       transition: 3s; }
 
 .encabezado .iencabezado {
-  font-size: 50px; }
+  font-size: 40px; }
 
 .socialIcons {
   padding: 0;
@@ -37,18 +37,103 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
       transition: 0.6s;
       color: #66E7C2; }
 
+.row {
+  margin: 0px; }
+
+body .triangle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%; }
+body .triangle2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%; }
+body .portada {
+  height: 100vh; }
+  body .portada video {
+    width: 100%;
+    overflow: hidden; }
+body .services {
+  height: 600px;
+  widht: 100vw; }
+  body .services .serviceMenu {
+    list-style: none; }
+    body .services .serviceMenu li {
+      padding: 10px;
+      cursor: pointer;
+      font-size: 30px;
+      transition: 2s;
+      letter-spacing: 1.5px; }
+      body .services .serviceMenu li:hover {
+        color: #66E7C2;
+        transition: 0.8s; }
+  body .services .cuboContainer {
+    display: flex;
+    justify-content: center;
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    margin: 30px;
+    transition: 6s;
+    position: absolute;
+    top: 20%;
+    left: 50%; }
+    body .services .cuboContainer .cuboWrapper {
+      position: absolute;
+      transition: 3s;
+      width: 275px;
+      height: 275px;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      /*box-shadow:grey -4px 9px 24px 5px;*/ }
+      body .services .cuboContainer .cuboWrapper:hover {
+        transform: rotateY(270deg);
+        -webkit-transform: rotateX(-270deg);
+        transition: 4s; }
+      body .services .cuboContainer .cuboWrapper .lados {
+        height: 100%;
+        width: 100%;
+        opacity: 0.75;
+        backface-visibility: hidden; }
+        body .services .cuboContainer .cuboWrapper .lados h3 {
+          padding: 10px; }
+        body .services .cuboContainer .cuboWrapper .lados img {
+          width: 100%; }
+      body .services .cuboContainer .cuboWrapper .front {
+        position: absolute;
+        background-color: orange;
+        opacity: 0.9;
+        z-index: 100;
+        transform: translateZ(137.5px);
+        -webkit-transform: translateZ(137.5px); }
+      body .services .cuboContainer .cuboWrapper .back {
+        position: absolute;
+        background-color: #66E7C2;
+        transform: translateZ(-137.5px) rotateY(-180deg);
+        -webkit-transform: translateZ(-137.5px) rotateY(-180deg); }
+      body .services .cuboContainer .cuboWrapper .top {
+        position: absolute;
+        background-color: red;
+        transform: translateY(-137.5px) rotateY(90deg);
+        -webkit-transform: translateY(-137.5px) rotateX(90deg); }
+      body .services .cuboContainer .cuboWrapper .bottom {
+        position: absolute;
+        background-color: #1370DE;
+        transform: translateY(137.5px) rotateX(-90deg);
+        -webkit-transform: translateY(137.5px) rotateX(-90deg); }
+      body .services .cuboContainer .cuboWrapper .right {
+        position: absolute;
+        background-color: red;
+        transform: translateX(137.5px) rotateY(90deg);
+        -webkit-transform: translateX(137.5px) rotateY(90deg); }
+      body .services .cuboContainer .cuboWrapper .left {
+        position: absolute;
+        background-color: blue;
+        transform: translateX(-137.5px) rotateY(-90deg);
+        -webkit-transform: translateX(-137.5px) rotateY(-90deg); }
 body .members {
   background-color: whitesmoke; }
-  body .members .triangle {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%; }
-  body .members .triangle2 {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%; }
   body .members .cuadrantWrapper {
     padding: 70px 250px 10px 250px; }
     @media screen and (max-width: 800px) {
