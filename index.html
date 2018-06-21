@@ -12,11 +12,14 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 	<link href='imagenes/web/LOGO1.png' rel='shortcut icon' type='image/png'>
 
-
-
 	<!-- JQUERY -->
 	<script src="/libs/jquery/jquery.js"></script>
+	<script src="/js/animationFunc/animateJQ.js"></script>
 
+	<!-- RIVESCRIPT -->
+	<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+	<script src="/js/chatBot/chatBot.js"></script>	
+		
 
 	<!-- FIREBASE SCRIPT -->
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -30,7 +33,9 @@
 	
 	<script src="https://unpkg.com/ionicons@4.0.0/dist/ionicons.js"></script>
 
-<link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/ionicons@4.1.2/dist/css/ionicons.min.css" rel="stylesheet">
+
+
 	
 
 
@@ -50,7 +55,29 @@
 
 <script>
 new WOW().init();
+
+
+
+
+
 </script>
+
+<div id="chatBot">
+	<div id="minimize">
+		<p>Chatea con Broom</p>
+	</div>
+	<div id="chatBody">
+		
+	</div>	
+	<div id="chatInput">
+		<div class="input-group">
+			<input id="chatInputBox" class="form-control"type="text">
+			
+		</div>
+	</div>
+</div>
+
+
 
 <!-- <header class="portada">
 
@@ -59,68 +86,116 @@ new WOW().init();
 			<img class="triangle2" src="imagenes/web/triangle2.png" alt="">	
 </header>	
  -->
+<!-- sin barra de menu 
+
+-->
 
 
-<section class="services">
-	<div class="encabezado text-center">
-		<ion-icon name="finger-print"></ion-icon>
-		<h2 class="display-5 font-weight-light ">Nuestros <span class="font-weight-italic"> Servicios </span></h2>
-	</div>
-	<ul class="serviceMenu">
-		<li id="desarrollo" class="display-4"><ion-icon name="images"></ion-icon></i> Desarrollo Web</li>
-		<li id="mobil"  class="display-4"> <ion-icon name="battery-charging"></ion-icon>Aplicaciones Mobiles</li>
-		<li id="render" class="display-4"> <i class="icon ion-md-cube"></i> Renders 3D</li>
-		<li id="planos" class="display-4"><ion-icon name="business"></ion-icon> Armado de planos</li>
-	</ul>
+<nav class=" navbar navbar-expand-lg navbar-light  broomNav">
+  <img class="logo" src="imagenes/web/logo.png" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Sobre Broom <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">Proyectos</a>
+      <a class="nav-item nav-link" href="#">Conocenos</a>
+      <a class="nav-item nav-link" href="#">Dejanos tu mensaje</a>
+    </div>
+  </div>
+</nav>
 
-	<script>
+ <section class="servicios">
 
-	$("#render").hover(function(){
-		$(".cuboWrapper").css({
-			transform: 'rotateX(180deg) rotateZ(180deg) ',
-			color :'white'
-		});
-	})
-
-	$("#desarrollo").hover(function(){
-		$(".cuboWrapper").css({
-			transform: 'rotateX(-380deg) rotateZ(90deg) ',
-			color :'white'
-		});
-	})
-		
-	</script>
-
- 	<div class="cuboContainer">
-	 	<div class="cuboWrapper">
-	 		<div class="lados front">
-	 			<img src="imagenes/web/charlieAvatar.png" alt="">
-	 		</div>
-	 		<div class="lados back">
-	 			<h3>MODELADO 3D</h3>
-	 		</div>
-	 		<div class="lados top">
-	 			<h3>PORTFOLIO DE TOMY</h3>
-	 		</div>
-	 		<div class="lados bottom">
-	 			<h3>PORTFOLIO DE CHARLIE</h3>
-	 		</div>
-	 		<div class="lados right">
-	 			<h3>DESARROLLO WEB</h3>
-	 		</div>
-	 		<div class="lados left">
-	 			<h3> APLICACIONES MOBILES</h3>
-	 		</div>
-	 	</div>
+ 	<div class="servicioEncabezado">
+	 	<h2 class="sectionTitle1">Broom Servicios</h2>
+	 	<div class="servicioMenu">
+	 		<ul class="servicioList">
+	 			<li class="servicioItem" id="desarrolloWeb">Desarrollo Web   |  </li>
+	 			<li  class="servicioItem" id="desarrolloMobile">Desarrollo Mobile     | </li>
+	 			<li  class="servicioItem" id="render">Renders 3D   |  </li>
+	 		</ul>
+	 	</div> 		
  	</div>
 
+ 	<div class="servicioWrapper">
+ 		<div class="slide desarrolloWeb">
+ 			<h3>Desarrollo</h3>
+ 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur animi beatae! Nesciunt optio delectus suscipit ipsa ullam veniam ipsam, aliquam laboriosam laudantium ut voluptatum eius quam omnis officia earum!</p>
+ 		</div>
+ 		<div class="slide desarrolloMobile">
+ 			<h3>DesarrolloM</h3>
+ 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis nihil asperiores, accusantium ea quis esse facilis itaque assumenda, consequuntur voluptatibus maiores nostrum, nam fugit quia excepturi qui tenetur similique a.</p>
+ 		</div>
+ 		<div class="slide render">
+ 			<h3>Render</h3>
+ 			<div class="proyectoWrapper">
+ 			<div class="galeriaWrapper">
+ 				<img class="render" src="imagenes/portfolioTomy/renders/render1.jpg" alt="">
+ 				<img class="render" src="imagenes/portfolioTomy/renders/render2.jpg" alt="">
+ 				<img class="render" src="imagenes/portfolioTomy/renders/render3.jpg" alt="">
+ 				
+ 			</div>
+ 				
+ 			</div>
+ 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi atque, facere aperiam, sunt at officia iste, nulla recusandae ut consequuntur voluptatem amet distinctio repellendus eveniet asperiores delectus facilis ex deleniti.</p>
+ 		</div>
+ 		
+ 	</div>
+ 	
 
-</section>
+					
+
+ </section>
+
+
 
 <section class="members">
+	<script>
+		
+		var rot = 0;
+		var trans = 10;
+		var zeta = 0;
+		var movimiento = 1
+
+		setInterval(function(){
+			rot += 90;
+			if  (movimiento  === 1){
+				
+	 			$(".cuboWrapper").css({
+					transform: "rotateX(" + 90 + "deg) rotateZ("+10+ "deg) rotateY("+30 + "deg)  translateZ(" + 0 + "px)",
+				});	
+
+			movimiento = 2;	
+			}else if (movimiento ===2){
+				$(".cuboWrapper").css({
+					transform: "rotateX(" + 0 + "deg) rotateZ("+95+ "deg) rotateY("+90 + "deg)  translateZ(" + -30 + "px)",
+				});
+
+				movimiento = 3;	
+
+			}else{
+
+	 			$(".cuboWrapper").css({
+					transform: "rotateX(" + -90 + "deg) rotateZ("+-45+ "deg) rotateY("+0 + "deg)  translateZ(" + 30+ "px)",
+				});	
+
+			movimiento = 1;
+			}
+		
+
+		},1000)
+
+
+
+
+
+		
+	</script>
 		<div class="encabezado text-center">
 			
-			<i class="icon iencabezado ion-md-infinite"></i><h2 class="display-4 font-weight-light ">Miembros <span class="font-weight-italic"> Broom </span></h2>
+			<i class="icon iencabezado ion-md-infinite"></i><h2 class="sectionTitle font-weight-light ">Miembros <span class="font-weight-italic"> Broom </span></h2>
 		</div>
 		<div id="member1" >
 			<img class="triangle" src="imagenes/web/triangle.png" alt="">
@@ -147,7 +222,29 @@ new WOW().init();
 		
 					</div>
 					<div id="cuadrante1" class="col-xs-12 col-lg-6 wow bounceInUp ">
-						<img class="avatar" src="imagenes/web/charlieAvatar.png" alt="">						
+						<img class="avatar" src="imagenes/web/charlieAvatar.png" alt="">
+					 	<div class="cuboContainer">
+						 	<div class="cuboWrapper">
+						 		<div class="lados front">
+						 			<img src="imagenes/skills/javascript.png" alt="">
+						 		</div>
+						 		<div class="lados back">
+						 			<img src="imagenes/skills/angular.png" alt="">
+						 		</div>
+						 		<div class="lados top">
+						 			<img src="imagenes/skills/mongo.png" alt="">
+						 		</div>
+						 		<div class="lados bottom">
+						 			<img src="imagenes/skills/html.png" alt="">
+						 		</div>
+						 		<div class="lados right">
+						 			<img src="imagenes/skills/firebase.png" alt="">
+						 		</div>
+						 		<div class="lados left">
+						 			<img src="imagenes/skills/node.png" alt="">
+						 		</div>
+						 	</div>
+					 	</div>						
 					</div>	
 					
 				</div>					
@@ -172,7 +269,29 @@ new WOW().init();
 							</ul>
 					</div>
 					<div id="cuadrante4" class="col-xs-12 col-lg-6 wow bounceInUp">						
-						<img class="avatar" src="imagenes/web/tomyAvatar.png" alt="">						
+						<img class="avatar" src="imagenes/web/tomyAvatar.png" alt="">
+						 	<div class="cuboContainer">
+							 	<div class="cuboWrapper">
+							 		<div class="lados front">
+							 			<img src="imagenes/skills/vray.png" alt="">
+							 		</div>
+							 		<div class="lados back">
+							 			<img src="imagenes/skills/illustrator.png" alt="">
+							 		</div>
+							 		<div class="lados top">
+							 			<img src="imagenes/skills/aftereffects.png" alt="">
+							 		</div>
+							 		<div class="lados bottom">
+							 			<img src="imagenes/skills/3dmax.jpg" alt="">
+							 		</div>
+							 		<div class="lados right">
+							 			<img src="imagenes/skills/autocad.png" alt="">
+							 		</div>
+							 		<div class="lados left">
+							 			<img src="imagenes/skills/autocad.png" alt="">
+							 		</div>
+							 	</div>
+						 	</div>							
 					</div>
 
 				</div>				

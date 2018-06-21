@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=ABeeZee:400i|Abril+Fatface|Amatic+SC|IBM+Plex+Sans:300|Indie+Flower|Julius+Sans+One|Lato|Libre+Franklin:200,200i|Lobster|Lora:400i|Monoton|Montserrat|Open+Sans|PT+Serif:400,700|Pacifico|Permanent+Marker|Playfair+Display:400,700|Poiret+One|Questrial|Quicksand:300|Raleway:200,400|Roboto|Rufina|Special+Elite|Spectral:300,400|Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,800");
 .parrafo {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Ubuntu", serif;
   font-weight: 300;
-  font-size: 15px; }
+  font-size: px;
+  line-height: 23px; }
 
 cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cuadrante4 {
   padding: 10px;
@@ -40,6 +42,96 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
 .row {
   margin: 0px; }
 
+.cuboContainer {
+  display: flex;
+  justify-content: center;
+  perspective: 800px;
+  -webkit-perspective: 800px;
+  margin: 30px;
+  transition: 6s;
+  position: absolute;
+  top: 0%;
+  left: 70%; }
+  .cuboContainer .cuboWrapper {
+    position: absolute;
+    transition: 2s;
+    width: 90px;
+    height: 90px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: rotateX(10deg) rotateZ(15deg);
+    /*box-shadow:grey -4px 9px 24px 5px;*/ }
+    .cuboContainer .cuboWrapper .lados {
+      height: 100%;
+      width: 100%;
+      opacity: 0.65;
+      backface-visibility: hidden;
+      position: relative; }
+      .cuboContainer .cuboWrapper .lados h3 {
+        padding: 10px; }
+      .cuboContainer .cuboWrapper .lados img {
+        position: absolute;
+        width: 95%;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        padding: 10px;
+        box-sizing: border-box; }
+    .cuboContainer .cuboWrapper .front {
+      position: absolute;
+      background-color: #1370DF;
+      opacity: 0.9;
+      z-index: 100;
+      transform: translateZ(45px);
+      -webkit-transform: translateZ(45px);
+      box-shadow: 0px 0px -10px -30px; }
+    .cuboContainer .cuboWrapper .back {
+      position: absolute;
+      background-color: #36ABCC;
+      transform: translateZ(-45px) rotateY(-180deg);
+      -webkit-transform: translateZ(-45px) rotateY(-180deg); }
+    .cuboContainer .cuboWrapper .top {
+      position: absolute;
+      background-color: #5DFFCA;
+      transform: translateY(-45px) rotateY(90deg);
+      -webkit-transform: translateY(-45px) rotateX(90deg); }
+    .cuboContainer .cuboWrapper .bottom {
+      position: absolute;
+      background-color: #CC3666;
+      transform: translateY(45px) rotateX(-90deg);
+      -webkit-transform: translateY(45px) rotateX(-90deg); }
+    .cuboContainer .cuboWrapper .right {
+      position: absolute;
+      background-color: #4BCCA1;
+      transform: translateX(45px) rotateY(90deg);
+      -webkit-transform: translateX(45px) rotateY(90deg); }
+    .cuboContainer .cuboWrapper .left {
+      position: absolute;
+      background-color: #AAFFE3;
+      transform: translateX(-45px) rotateY(-90deg);
+      -webkit-transform: translateX(-45px) rotateY(-90deg); }
+
+.but {
+  border-radius: 50px;
+  ont-size: 13px; }
+  .but:hover {
+    border: 2px solid;
+    background-color: whitesmoke;
+    transition: 2s;
+    font-size: 13px; }
+
+.sectionTitle {
+  font-family: "Quicksand";
+  font-size: 35px;
+  letter-spacing: 1.5px;
+  text-transfor: uppercase;
+  color: #252526; }
+
+.parrafo {
+  font-family: "Ubuntu", serif;
+  font-size: 15px;
+  font-weight: 300; }
+
 body .triangle {
   position: absolute;
   top: 0px;
@@ -55,83 +147,101 @@ body .portada {
   body .portada video {
     width: 100%;
     overflow: hidden; }
-body .services {
-  height: 600px;
-  widht: 100vw; }
-  body .services .serviceMenu {
-    list-style: none; }
-    body .services .serviceMenu li {
-      padding: 10px;
-      cursor: pointer;
-      font-size: 30px;
-      transition: 2s;
-      letter-spacing: 1.5px; }
-      body .services .serviceMenu li:hover {
-        color: #66E7C2;
-        transition: 0.8s; }
-  body .services .cuboContainer {
-    display: flex;
-    justify-content: center;
-    perspective: 800px;
-    -webkit-perspective: 800px;
-    margin: 30px;
-    transition: 6s;
-    position: absolute;
-    top: 20%;
-    left: 50%; }
-    body .services .cuboContainer .cuboWrapper {
+body .broomNav.navbar {
+  background-color: transparent; }
+body .broomNav .navbar-toggler {
+  border: none; }
+body .broomNav .logo {
+  height: 50px; }
+body #chatBot {
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  right: 20px;
+  height: 350px;
+  width: 250px;
+  background-color: rgba(130, 130, 130, 0.7);
+  border-radius: 5px; }
+  body #chatBot #chatBody {
+    padding: 10px;
+    height: 80%;
+    overflow-7: scroll; }
+    body #chatBot #chatBody .msg {
+      padding: 8px;
+      color: #252526;
+      border-radius: 10px;
+      font-size: 12px;
+      margin: 0;
+      margin-bottom: 5px;
+      width: 70%; }
+    body #chatBot #chatBody .msgBroom {
+      background-color: #66E7C2;
+      float: left; }
+    body #chatBot #chatBody .msgClient {
+      background-color: #1370DE;
+      color: whitesmoke;
+      float: right; }
+  body #chatBot #chatInput {
+    height: 10%; }
+    body #chatBot #chatInput input {
+      width: 100%;
+      font-size: 13px;
+      outline: none; }
+  body #chatBot #minimize {
+    margin: 0;
+    height: 10%;
+    background-color: #252526;
+    color: white;
+    text-align: center;
+    font-size: 10px; }
+    body #chatBot #minimize vertical-align:center
+    p {
+      margin-top: 0px;
+      padding: 5px; }
+body .servicios {
+  overflow: hidden;
+  transition: 3s;
+  text-align: center;
+  height: 100vh;
+  background-color: whitesmoke;
+  padding: 10px; }
+  body .servicios .servicioEncabezado {
+    padding: 30px 50px 15px 50px;
+    color: #252526; }
+    body .servicios .servicioEncabezado .sectionTitle1 {
+      font-family: "Quicksand";
+      letter-spacing: -1px; }
+    body .servicios .servicioEncabezado .servicioMenu .servicioList {
+      list-style: none;
+      padding: 0px; }
+      body .servicios .servicioEncabezado .servicioMenu .servicioList .servicioItem {
+        display: inline-block;
+        padding: 10px 10px 10px 0px;
+        cursor: pointer; }
+  body .servicios .servicioWrapper {
+    position: relative;
+    transition: 3s;
+    transform: rotateX(10deg); }
+    body .servicios .servicioWrapper .slide {
       position: absolute;
-      transition: 3s;
-      width: 275px;
-      height: 275px;
-      transform-style: preserve-3d;
-      -webkit-transform-style: preserve-3d;
-      /*box-shadow:grey -4px 9px 24px 5px;*/ }
-      body .services .cuboContainer .cuboWrapper:hover {
-        transform: rotateY(270deg);
-        -webkit-transform: rotateX(-270deg);
-        transition: 4s; }
-      body .services .cuboContainer .cuboWrapper .lados {
-        height: 100%;
-        width: 100%;
-        opacity: 0.75;
-        backface-visibility: hidden; }
-        body .services .cuboContainer .cuboWrapper .lados h3 {
-          padding: 10px; }
-        body .services .cuboContainer .cuboWrapper .lados img {
-          width: 100%; }
-      body .services .cuboContainer .cuboWrapper .front {
-        position: absolute;
-        background-color: orange;
-        opacity: 0.9;
-        z-index: 100;
-        transform: translateZ(137.5px);
-        -webkit-transform: translateZ(137.5px); }
-      body .services .cuboContainer .cuboWrapper .back {
-        position: absolute;
-        background-color: #66E7C2;
-        transform: translateZ(-137.5px) rotateY(-180deg);
-        -webkit-transform: translateZ(-137.5px) rotateY(-180deg); }
-      body .services .cuboContainer .cuboWrapper .top {
-        position: absolute;
-        background-color: red;
-        transform: translateY(-137.5px) rotateY(90deg);
-        -webkit-transform: translateY(-137.5px) rotateX(90deg); }
-      body .services .cuboContainer .cuboWrapper .bottom {
-        position: absolute;
-        background-color: #1370DE;
-        transform: translateY(137.5px) rotateX(-90deg);
-        -webkit-transform: translateY(137.5px) rotateX(-90deg); }
-      body .services .cuboContainer .cuboWrapper .right {
-        position: absolute;
-        background-color: red;
-        transform: translateX(137.5px) rotateY(90deg);
-        -webkit-transform: translateX(137.5px) rotateY(90deg); }
-      body .services .cuboContainer .cuboWrapper .left {
-        position: absolute;
-        background-color: blue;
-        transform: translateX(-137.5px) rotateY(-90deg);
-        -webkit-transform: translateX(-137.5px) rotateY(-90deg); }
+      height: 700px;
+      padding: 50px;
+      top: 0;
+      left: 0;
+      color: #252526; }
+    body .servicios .servicioWrapper .desarrolloWeb {
+      background: linear-gradient(#A54CF4, #C431F8);
+      transition: 1.5s;
+      width: 100%;
+      box-sizing: border-box; }
+    body .servicios .servicioWrapper .desarrolloMobile {
+      left: -100%;
+      transition: 1.5s;
+      width: 100%; }
+    body .servicios .servicioWrapper .render {
+      left: -200%;
+      transition: 1.5s;
+      width: 100%; }
 body .members {
   background-color: whitesmoke; }
   body .members .cuadrantWrapper {
@@ -142,7 +252,7 @@ body .members {
         text-alignt: center; } }
   body .members #member1 {
     position: relative;
-    background-color: #171819;
+    background-color: #252526;
     color: whitesmoke;
     text-align: right; }
     body .members #member1 #cuadrante2 {
@@ -173,7 +283,7 @@ body .members {
       body .members #member2 #cuadrante3 .nombretrabajo {
         color: #1370DE; }
       body .members #member2 #cuadrante3 .icon {
-        color: black; }
+        color: #252526; }
         body .members #member2 #cuadrante3 .icon:hover {
           color: #1370DE; }
 
