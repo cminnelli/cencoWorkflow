@@ -160,12 +160,14 @@ body #chatBot {
   right: 20px;
   height: 350px;
   width: 250px;
-  background-color: rgba(130, 130, 130, 0.7);
+  background-color: rgba(130, 130, 130, 0.85);
   border-radius: 5px; }
   body #chatBot #chatBody {
     padding: 10px;
     height: 80%;
     overflow-7: scroll; }
+    body #chatBot #chatBody .imgChat {
+      width: 100px; }
     body #chatBot #chatBody .msg {
       padding: 8px;
       color: #252526;
@@ -187,6 +189,8 @@ body #chatBot {
       width: 100%;
       font-size: 13px;
       outline: none; }
+    body #chatBot #chatInput .form-control {
+      border-radius: 0; }
   body #chatBot #minimize {
     margin: 0;
     height: 10%;
@@ -230,7 +234,6 @@ body .servicios {
       left: 0;
       color: #252526; }
     body .servicios .servicioWrapper .desarrolloWeb {
-      background: linear-gradient(#A54CF4, #C431F8);
       transition: 1.5s;
       width: 100%;
       box-sizing: border-box; }
