@@ -125,7 +125,7 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
   font-size: 35px;
   letter-spacing: 1.5px;
   text-transfor: uppercase;
-  color: #252526; }
+  color: #333; }
 
 .parrafo {
   font-family: "Ubuntu", serif;
@@ -153,55 +153,97 @@ body .broomNav .navbar-toggler {
   border: none; }
 body .broomNav .logo {
   height: 50px; }
+body #chatIcon {
+  cursor: pointer;
+  opacity: 0.85;
+  z-index: 999999;
+  height: 55px;
+  width: 55px;
+  background-color: #0176FF;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  transition: all ease-in 0.5s; }
+  body #chatIcon:hover {
+    opacity: 0.99;
+    transition: all ease-in-out 0.5s; }
+  body #chatIcon .wrapIcon {
+    position: absolute;
+    font-size: 27.5px;
+    color: whitesmoke;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
 body #chatBot {
+  display: none;
   position: fixed;
   z-index: 9999;
   bottom: 0;
-  right: 20px;
-  height: 350px;
-  width: 250px;
-  background-color: rgba(130, 130, 130, 0.85);
+  right: 0;
+  height: 100vh;
+  width: 350px;
+  background-color: #FFFFFF;
   border-radius: 5px; }
+  @media screen and (max-width: 400px) {
+    body #chatBot {
+      width: 100%;
+      opacity: 0.95;
+      transition: 2s; } }
   body #chatBot #chatBody {
+    border: 1px solid whitesmoke;
     padding: 10px;
-    height: 80%;
+    height: 82%;
     overflow-7: scroll; }
     body #chatBot #chatBody .imgChat {
       width: 100px; }
     body #chatBot #chatBody .msg {
-      padding: 8px;
-      color: #252526;
+      padding: 10px;
+      color: #333;
       border-radius: 10px;
-      font-size: 12px;
+      font-size: 14px;
       margin: 0;
       margin-bottom: 5px;
       width: 70%; }
     body #chatBot #chatBody .msgBroom {
-      background-color: #66E7C2;
+      background-color: #EEEEEE;
       float: left; }
     body #chatBot #chatBody .msgClient {
       background-color: #1370DE;
       color: whitesmoke;
       float: right; }
   body #chatBot #chatInput {
-    height: 10%; }
+    height: 10%;
+    border-top: 1px solid #1370DE; }
     body #chatBot #chatInput input {
       width: 100%;
-      font-size: 13px;
-      outline: none; }
+      border: none;
+      font-size: 1rem;
+      resize: none;
+      line-height: 1.2;
+      padding: .75rem 1rem;
+      margin-bottom: .5rem; }
     body #chatBot #chatInput .form-control {
       border-radius: 0; }
   body #chatBot #minimize {
     margin: 0;
-    height: 10%;
-    background-color: #252526;
-    color: white;
+    height: 8%;
+    background-color: white;
+    border: 1px solid whitesmoke;
+    color: #333;
     text-align: center;
-    font-size: 10px; }
-    body #chatBot #minimize vertical-align:center
-    p {
+    font-size: 12px;
+    vertical-align: center; }
+    body #chatBot #minimize p {
       margin-top: 0px;
-      padding: 5px; }
+      padding: 5px;
+      display: inline; }
+    body #chatBot #minimize i {
+      float: right;
+      font-size: 20px;
+      padding: 5px;
+      color: grey; }
 body .servicios {
   overflow: hidden;
   transition: 3s;
@@ -211,7 +253,7 @@ body .servicios {
   padding: 10px; }
   body .servicios .servicioEncabezado {
     padding: 30px 50px 15px 50px;
-    color: #252526; }
+    color: #333; }
     body .servicios .servicioEncabezado .sectionTitle1 {
       font-family: "Quicksand";
       letter-spacing: -1px; }
@@ -232,7 +274,7 @@ body .servicios {
       padding: 50px;
       top: 0;
       left: 0;
-      color: #252526; }
+      color: #333; }
     body .servicios .servicioWrapper .desarrolloWeb {
       transition: 1.5s;
       width: 100%;
@@ -255,7 +297,7 @@ body .members {
         text-alignt: center; } }
   body .members #member1 {
     position: relative;
-    background-color: #252526;
+    background-color: #333;
     color: whitesmoke;
     text-align: right; }
     body .members #member1 #cuadrante2 {
@@ -286,7 +328,7 @@ body .members {
       body .members #member2 #cuadrante3 .nombretrabajo {
         color: #1370DE; }
       body .members #member2 #cuadrante3 .icon {
-        color: #252526; }
+        color: #333; }
         body .members #member2 #cuadrante3 .icon:hover {
           color: #1370DE; }
 

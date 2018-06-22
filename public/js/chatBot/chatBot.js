@@ -69,4 +69,10 @@ $("#chatInputBox").keypress(function(event) {
 	}
 });
 
+
+$("#chatIcon , #close").click(function(event) {
+	$("#chatBot").slideToggle(500)
+	
+});
+
 })

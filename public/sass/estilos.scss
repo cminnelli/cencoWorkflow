@@ -29,7 +29,7 @@
 
 
 //ESTILO WEB
-$black-modern:#252526;
+$black-modern:#333;
 $green-soft:#66E7C2;
 $blue-bright:#1370DE;
 $violet-soft:#6F6CC3;
@@ -271,42 +271,76 @@ body{
 		}	
 	}
 
+	
+$chatWrapp:55;
+
+$chatWrapppx: $chatWrapp + 0px;
+$chatIcon: $chatWrapp /2 + 0px;
+
+	#chatIcon{
+		cursor:pointer;
+		opacity:0.85;
+		z-index:999999;
+		height:$chatWrapppx;
+		width:$chatWrapppx;
+		background-color:#0176FF;
+		padding:10px;
+		border-radius:10px;
+		position:fixed;
+		bottom:60px;
+		right:10px;
+		transition:all ease-in 0.5s;
+		&:hover{
+			opacity:0.99;
+			transition:all ease-in-out 0.5s;
+		}
+		.wrapIcon{
+			position:absolute;
+			font-size:$chatIcon;
+			color:whitesmoke;
+			top:50%;
+			left:50%;
+			transform:translate(-50% , -50%);
+		}	
+	}
+
 
 	#chatBot{
+		display:none;
 		position:fixed;
 		z-index:9999;
 		bottom:0;
-		right:20px;
-		height:350px;
-		width:250px;
-		background-color:rgba(130,130,130,0.85);
+		right:0;
+		height:100vh;
+		width:350px;
+		background-color:#FFFFFF;
 		border-radius:5px;
-		// @media screen and(max-width:400px){
-		// 	width:100vw;
-		// 	height: 100vh;
-		// 	padding:0;
-		// 	margin:0;
-		// }
+		@media screen and(max-width:400px){
+			width:100%;
+			opacity:0.95;
+			transition:2s;
+		}
 
 		#chatBody{
+			border:1px solid whitesmoke;
 			padding:10px;
-			height:80%;
+			height:82%;
 			overflow-7:scroll;
 			.imgChat{
 				width:100px;
 			}
 			.msg{
-				padding:8px;
+				padding:10px;
 				color:$black-modern;
 				border-radius:10px;
-				font-size:12px;
+				font-size:14px;
 				margin:0;
 				margin-bottom:5px;
 				width:70%;
 
 			}
 			.msgBroom{
-				background-color:$green-soft;
+				background-color:#EEEEEE;
 				float:left;
 			}
 			.msgClient{
@@ -318,10 +352,15 @@ body{
 
 		#chatInput{
 			height:10%;
+			border-top:1px solid $blue-bright;
 			input{
-				width:100%;
-				font-size:13px;	
-				outline:none;								
+				width: 100%;
+				border: none;
+				font-size: 1rem;
+				resize: none;
+				line-height: 1.2;
+				padding: .75rem 1rem;
+				margin-bottom: .5rem;								
 
 			}
 			.form-control{
@@ -331,15 +370,23 @@ body{
 		}
 		#minimize{
 			margin:0;
-			height:10%;
-			background-color:$black-modern;
-			color:white;
+			height:8%;
+			background-color:white;
+			border:1px solid whitesmoke;
+			color:$black-modern;
 			text-align:center;
-			font-size:10px;
-			vertical-align:center
+			font-size:12px;
+			vertical-align:center;
 			p{
 				margin-top:0px;
 				padding:5px;
+				display:inline;
+			}
+			i{
+				float:right;
+				font-size:20px;
+				padding:5px;
+				color:grey;
 			}
 
 		}
