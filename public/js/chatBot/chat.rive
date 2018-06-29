@@ -1,12 +1,42 @@
 ! version = 2.0
 
 ! var nombre = broom
++*
+-No entiendo mucho aveces!
 
-+ * 
-- no entiendo, preguntame mejor!
+! sub genial =  bien
 
-+ hola *
-- hola como estas?
++ * hola*
+// - Ei, Como estas? Soy el chatBot de BroomStudio. En que puedo ayudarte? {weight=1}
 
-+ * responsive
-- esta buenisimo podes ver el todos los dispositivos
+-Ei!  Estamos contentos que visites nuestra web. Queres darnos tu mail para seguirla en caso de que te desconectes? <input  id="chatMail" class="form-control"  placeholder="ingresa tu mail y enter"></input> 
+
+
++ bien
+-Asi me gusta, contamos, en que puedo ayudarte?
+-<button>eee</button>
+
++ bien *
+@bien
+
++ * bien * 
+@bien
+
++ * buenisimo * 
+- ah buenisimo si
+
++hola
+@ * hola *
+
++hola *
+@ * hola *
+
++ * whatsapp
+- Te envio nuestro whatsapp <i class="icon ion-logo-whatsapp"></i> 1527994952
+
+
++ *@* 
+- vamos a guardar tu mail en tu base de datos
+
++ * (renders | render)
+- dejamos un archivo <input type="file" placeholder="render"></input> {weight=3}

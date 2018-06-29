@@ -71,7 +71,7 @@ $("#chatInputBox").keypress(function(event) {
 
 
 $("#chatIcon , #close").click(function(event) {
-	$("#chatBot").slideToggle(500)
+	$("#chatBot").animate({width: 'toggle'});
 	
 });
 

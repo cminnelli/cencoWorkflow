@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=ABeeZee:400i|Abril+Fatface|Amatic+SC|IBM+Plex+Sans:300|Indie+Flower|Julius+Sans+One|Lato|Libre+Franklin:200,200i|Lobster|Lora:400i|Monoton|Montserrat|Open+Sans|PT+Serif:400,700|Pacifico|Permanent+Marker|Playfair+Display:400,700|Poiret+One|Questrial|Quicksand:300|Raleway:200,400|Roboto|Rufina|Special+Elite|Spectral:300,400|Ubuntu");
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,800");
-.parrafo {
-  font-family: "Ubuntu", serif;
-  font-weight: 300;
-  font-size: px;
-  line-height: 23px; }
+.centerPos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cuadrante4 {
   padding: 10px;
@@ -19,8 +19,10 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
     cuadranteImagen .avatar:hover, body .members #member1 #cuadrante1 .avatar:hover, body .members #member2 #cuadrante4 .avatar:hover {
       transition: 3s; }
 
-.encabezado .iencabezado {
-  font-size: 40px; }
+.encabezado {
+  padding: 30px 10px; }
+  .encabezado .iencabezado {
+    font-size: 40px; }
 
 .socialIcons {
   padding: 0;
@@ -29,7 +31,8 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
     .socialIcons {
       text-alignt: center; } }
   .socialIcons li {
-    display: inline-block; }
+    display: inline-block;
+    cursor: pointer; }
   .socialIcons .icon {
     color: white;
     font-size: 30px;
@@ -121,215 +124,413 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
     font-size: 13px; }
 
 .sectionTitle {
-  font-family: "Quicksand";
+  font-family: "Montserrat";
   font-size: 35px;
   letter-spacing: 1.5px;
   text-transfor: uppercase;
   color: #333; }
 
-.parrafo {
-  font-family: "Ubuntu", serif;
-  font-size: 15px;
-  font-weight: 300; }
-
-body .triangle {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%; }
-body .triangle2 {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%; }
-body .portada {
-  height: 100vh; }
-  body .portada video {
-    width: 100%;
-    overflow: hidden; }
-body .broomNav.navbar {
-  background-color: transparent; }
-body .broomNav .navbar-toggler {
-  border: none; }
-body .broomNav .logo {
-  height: 50px; }
-body #chatIcon {
-  cursor: pointer;
-  opacity: 0.85;
-  z-index: 999999;
-  height: 55px;
-  width: 55px;
-  background-color: #0176FF;
-  padding: 10px;
-  border-radius: 10px;
-  position: fixed;
-  bottom: 60px;
-  right: 10px;
-  transition: all ease-in 0.5s; }
-  body #chatIcon:hover {
-    opacity: 0.99;
-    transition: all ease-in-out 0.5s; }
-  body #chatIcon .wrapIcon {
-    position: absolute;
-    font-size: 27.5px;
-    color: whitesmoke;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-body #chatBot {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  bottom: 0;
-  right: 0;
-  height: 100vh;
-  width: 350px;
-  background-color: #FFFFFF;
-  border-radius: 5px; }
-  @media screen and (max-width: 400px) {
-    body #chatBot {
-      width: 100%;
-      opacity: 0.95;
-      transition: 2s; } }
-  body #chatBot #chatBody {
-    border: 1px solid whitesmoke;
-    padding: 10px;
-    height: 82%;
-    overflow-7: scroll; }
-    body #chatBot #chatBody .imgChat {
-      width: 100px; }
-    body #chatBot #chatBody .msg {
-      padding: 10px;
-      color: #333;
-      border-radius: 10px;
-      font-size: 14px;
-      margin: 0;
-      margin-bottom: 5px;
-      width: 70%; }
-    body #chatBot #chatBody .msgBroom {
-      background-color: #EEEEEE;
-      float: left; }
-    body #chatBot #chatBody .msgClient {
-      background-color: #1370DE;
-      color: whitesmoke;
-      float: right; }
-  body #chatBot #chatInput {
-    height: 10%;
-    border-top: 1px solid #1370DE; }
-    body #chatBot #chatInput input {
-      width: 100%;
-      border: none;
-      font-size: 1rem;
-      resize: none;
-      line-height: 1.2;
-      padding: .75rem 1rem;
-      margin-bottom: .5rem; }
-    body #chatBot #chatInput .form-control {
-      border-radius: 0; }
-  body #chatBot #minimize {
-    margin: 0;
-    height: 8%;
-    background-color: white;
-    border: 1px solid whitesmoke;
-    color: #333;
-    text-align: center;
-    font-size: 12px;
-    vertical-align: center; }
-    body #chatBot #minimize p {
-      margin-top: 0px;
-      padding: 5px;
-      display: inline; }
-    body #chatBot #minimize i {
-      float: right;
-      font-size: 20px;
-      padding: 5px;
-      color: grey; }
-body .servicios {
-  overflow: hidden;
-  transition: 3s;
+.subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
+  font-size: 20px;
+  font-family: "Montserrat", serif;
+  padding: 20px 10px;
   text-align: center;
-  height: 100vh;
-  background-color: whitesmoke;
-  padding: 10px; }
-  body .servicios .servicioEncabezado {
-    padding: 30px 50px 15px 50px;
-    color: #333; }
-    body .servicios .servicioEncabezado .sectionTitle1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px; }
+
+.subtitulo2 {
+  font-size: 14px;
+  font-family: "Montserrat", serif;
+  margin: 0;
+  padding: 5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+.parrafo {
+  font-family: "Raleway", serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 5px; }
+
+.parrafo2 {
+  font-family: "Raleway", serif;
+  font-size: 13px;
+  line-height: 21px;
+  margin-bottom: 5px; }
+
+body {
+  background-color: whitesmoke; }
+  body .triangle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%; }
+  body .triangle2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%; }
+  body .portada {
+    height: 100vh;
+    background: url("../imagenes/web/portada.jpg");
+    background-size: contain;
+    position: relative;
+    padding: 5px; }
+    body .portada .blackboardMenu {
+      position: absolute;
+      color: whitesmoke;
+      font-weight: 700;
+      left: 230px;
+      top: 150px;
+      opacity: 0.5; }
+      body .portada .blackboardMenu ul {
+        list-style: none;
+        cursor: pointer; }
+        body .portada .blackboardMenu ul li {
+          padding: 8px;
+          font-family: 'Libre Franklin', sans-serif;
+          font-size: 15px; }
+          body .portada .blackboardMenu ul li:hover {
+            color: #66E7C2;
+            transition: 1s; }
+  body .broomNav {
+    text-align: center; }
+    body .broomNav .logo {
+      height: 80px;
+      width: 80px;
+      display: inline;
+      padding: 10px; }
+  body #chatIcon {
+    cursor: pointer;
+    opacity: 0.90;
+    z-index: 999999;
+    height: 55px;
+    width: 55px;
+    background-color: #0176FF;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 60px;
+    left: 40px;
+    transition: all ease-in 0.5s; }
+    body #chatIcon:hover {
+      opacity: 0.99;
+      transition: all ease-in-out 0.5s; }
+    body #chatIcon .wrapIcon {
+      position: absolute;
+      font-size: 27.5px;
+      color: whitesmoke;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    @media screen and (max-weight: 300px) {
+      body #chatIcon {
+        height: 35px;
+        border: 1px solid white;
+        width: 17px;
+        left: 20px;
+        background-color: red; } }
+  body #chatBot {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    width: 350px;
+    background-color: #FFFFFF;
+    opacity: 0.90;
+    border-radius: 5px; }
+    @media screen and (max-width: 400px) {
+      body #chatBot {
+        width: 100%;
+        opacity: 0.95;
+        transition: 2s; } }
+    body #chatBot #chatBody {
+      border: 1px solid whitesmoke;
+      height: 82%;
+      width: 100%;
+      padding: 20px;
+      overflow-y: scroll; }
+      body #chatBot #chatBody .imgChat {
+        width: 100px; }
+      body #chatBot #chatBody .msg {
+        padding: 10px;
+        color: #333;
+        border-radius: 10px;
+        font-size: 14px;
+        margin: 0;
+        margin-bottom: 5px;
+        width: 85%; }
+        body #chatBot #chatBody .msg input {
+          font-size: 13px; }
+      body #chatBot #chatBody .msgBroom {
+        background-color: #EEEEEE;
+        float: left; }
+      body #chatBot #chatBody .msgClient {
+        background-color: #1370DE;
+        color: whitesmoke;
+        float: right; }
+    body #chatBot #chatInput {
+      height: 8%;
+      border-top: 1px solid #1370DE; }
+      body #chatBot #chatInput input {
+        width: 100%;
+        border: none;
+        font-size: 1rem;
+        height: 80%;
+        line-height: 1.2;
+        padding: .75rem 1rem;
+        margin-bottom: .5rem; }
+      body #chatBot #chatInput .form-control {
+        border-radius: 0; }
+    body #chatBot #minimize {
+      margin: 0;
+      height: 10%;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid whitesmoke;
+      color: #333;
+      text-align: center;
+      font-size: 12px;
+      vertical-align: center;
+      border-radius: 10px 10px 0px 0px; }
+      body #chatBot #minimize p {
+        display: inline; }
+      body #chatBot #minimize i {
+        float: right;
+        font-size: 20px;
+        padding: 5px;
+        color: grey; }
+  body .servicios {
+    transition: 1s;
+    text-align: center;
+    background-color: whitesmoke; }
+    body .servicios .sectionTitle1 {
       font-family: "Quicksand";
       letter-spacing: -1px; }
-    body .servicios .servicioEncabezado .servicioMenu .servicioList {
-      list-style: none;
-      padding: 0px; }
-      body .servicios .servicioEncabezado .servicioMenu .servicioList .servicioItem {
-        display: inline-block;
-        padding: 10px 10px 10px 0px;
-        cursor: pointer; }
-  body .servicios .servicioWrapper {
-    position: relative;
-    transition: 3s;
-    transform: rotateX(10deg); }
-    body .servicios .servicioWrapper .slide {
-      position: absolute;
-      height: 700px;
-      padding: 50px;
-      top: 0;
-      left: 0;
+    body .servicios .servicioMenu {
       color: #333; }
-    body .servicios .servicioWrapper .desarrolloWeb {
-      transition: 1.5s;
-      width: 100%;
-      box-sizing: border-box; }
-    body .servicios .servicioWrapper .desarrolloMobile {
-      left: -100%;
-      transition: 1.5s;
-      width: 100%; }
-    body .servicios .servicioWrapper .render {
-      left: -200%;
-      transition: 1.5s;
-      width: 100%; }
-body .members {
-  background-color: whitesmoke; }
-  body .members .cuadrantWrapper {
-    padding: 70px 250px 10px 250px; }
-    @media screen and (max-width: 800px) {
-      body .members .cuadrantWrapper {
-        padding: 40px;
-        text-alignt: center; } }
-  body .members #member1 {
-    position: relative;
-    background-color: #333;
-    color: whitesmoke;
-    text-align: right; }
-    body .members #member1 #cuadrante2 {
-      padding-top: 70px;
-      box-sizing: border-box;
-      padding: 70px 10px; }
+      @media screen and (max-weight: 900px) {
+        body .servicios .servicioMenu {
+          font-size: 1px;
+          color: red;
+          border: 1px solid blue; } }
+      body .servicios .servicioMenu .servicioList {
+        list-style: none;
+        padding: 0px; }
+        body .servicios .servicioMenu .servicioList .servicioItem {
+          display: inline-block;
+          padding: 10px 10px 10px 0px;
+          font-size: 15px;
+          cursor: pointer;
+          color: grey;
+          letter-spacing: 1.2px;
+          font-family: "Raleway"; }
+    body .servicios .servicioWrapper {
+      height: 2500px;
+      overflow: hidden;
+      position: relative;
+      transition: 0.5s; }
+      body .servicios .servicioWrapper .slide {
+        position: absolute;
+        height: 700px;
+        top: 0;
+        left: 0;
+        color: #333; }
+        body .servicios .servicioWrapper .slide .servicioEncabezado {
+          position: relative;
+          background-color: whitesmoke;
+          background-image: linear-gradient(#1370DE 20%, #65a6f2);
+          background-size: cover;
+          min-height: 250px;
+          color: white; }
+          body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText {
+            width: 80%; }
+            body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .servicioTitulo {
+              font-family: "Montserrat" , "Serif";
+              color: whitesmoke;
+              font-weight: 700;
+              font-size: 28px;
+              z-index: 9999; }
+            body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .parrafo {
+              color: whitesmoke; }
+          @media screen and (min-width: 800px) {
+            body .servicios .servicioWrapper .slide .servicioEncabezado {
+              min-height: 450px; }
+              body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .servicioTitulo {
+                color: whitesmoke;
+                font-weight: 700;
+                font-size: 40px;
+                z-index: 9999; }
+              body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .parrafo {
+                font-size: 20px; } }
+        body .servicios .servicioWrapper .slide .servicioInfo {
+          position: relative; }
+          body .servicios .servicioWrapper .slide .servicioInfo .subtitulo, body .servicios .servicioWrapper .slide .servicioInfo .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .servicioInfo .porfolioTitulo {
+            padding: 10px 0px; }
+          body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper {
+            padding: 30px 100px;
+            margin: 0; }
+            @media screen and (max-width: 900px) {
+              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper {
+                padding: 15px;
+                text-align: center; } }
+            body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem {
+              text-align: left;
+              padding: 10px; }
+              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem img {
+                padding: 8px;
+                text-align: right; }
+              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .infoIcon {
+                height: 65px; }
+              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test {
+                font-weight: 300;
+                color: #1370DE;
+                cursor: pointer; }
+                body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test .icon {
+                  color: #1370DE;
+                  font-size: 13px; }
+              @media screen and (max-width: 900px) {
+                body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem {
+                  text-align: center; } }
+        body .servicios .servicioWrapper .slide .servicioHerramientas {
+          position: relative;
+          color: whitesmoke;
+          padding: 70px 50px;
+          background-color: #333;
+          background: linear-gradient(10%, #333 50%, #666666 10%); }
+        body .servicios .servicioWrapper .slide .servicioPortfolio {
+          padding: 20px 40px;
+          transform-style: preserve-3d;
+          transform: rotateZ(-5deg); }
+          @media screen and (max-width: 600px) {
+            body .servicios .servicioWrapper .slide .servicioPortfolio {
+              transform: rotateZ(0deg); } }
+          body .servicios .servicioWrapper .slide .servicioPortfolio .subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
+            padding: 10px 0px;
+            background-color: #333;
+            color: whitesmoke; }
+            @media screen and (max-width: 300px) {
+              body .servicios .servicioWrapper .slide .servicioPortfolio .subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
+                background-color: transparent;
+                color: #333; } }
+          body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
+            box-shadow: grey 0px 1px 15px 2px;
+            perspective: 1000px; }
+            @media screen and (max-width: 600px) {
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
+                padding: 10px;
+                transform: rotateZ(0deg); } }
+            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
+              overflow: hidden;
+              cursor: pointer;
+              padding: 0px;
+              boxing-size: border-box;
+              height: 300px;
+              margin-bottom: 0px; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover img {
+                transition: all ease-in 0.5s;
+                transform: scale(1.02) perspective(300px) translateY(-200px);
+                transform: rotateY(-5deg); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .transparencia {
+                background-color: rgba(51, 51, 51, 0.9); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .portfolioText {
+                visibility: visible;
+                transition: all  1 ease-out; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem img {
+                z-index: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transition: all 0.15s ease-out;
+                transform: scale(1.12); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText {
+                visibility: hidden;
+                z-index: 20;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                margin: 0 auto;
+                position: absolute;
+                color: whitesmoke; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .icon {
+                  font-size: 35px;
+                  color: whitesmoke; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
+                  color: #1370DE;
+                  margin: 0;
+                  font-weight: 700; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .portfolioDescripcion {
+                  color: whitesmoke;
+                  margin: 0;
+                  padding: 2px; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .transparencia {
+                z-index: 10;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0; }
+      body .servicios .servicioWrapper .desarrolloWeb {
+        transition: 1.5s;
+        width: 100%;
+        box-sizing: border-box; }
+      body .servicios .servicioWrapper .desarrolloMobile {
+        left: -100%;
+        transition: 1.5s;
+        width: 100%; }
+      body .servicios .servicioWrapper .render {
+        left: -200%;
+        transition: 1.5s;
+        width: 100%; }
+  body .members {
+    background-color: whitesmoke; }
+    body .members .cuadrantWrapper {
+      padding: 70px 250px 10px 250px; }
       @media screen and (max-width: 800px) {
-        body .members #member1 #cuadrante2 {
-          padding: 20px; } }
-      body .members #member1 #cuadrante2 .nombretrabajo {
-        color: #66E7C2; }
-        @media screen and (max-width: 800px) {
-          body .members #member1 #cuadrante2 .nombretrabajo {
-            font-size: 17px;
-            transition: 1s;
-            text-alignt: center; } }
-  body .members #member2 {
-    text-align: right; }
-    body .members #member2 .cuadranteWrapper {
-      padding: 0px 250px 10px 250px; }
-      @media screen and (max-width: 800px) {
-        body .members #member2 .cuadranteWrapper {
+        body .members .cuadrantWrapper {
           padding: 40px;
           text-alignt: center; } }
-    body .members #member2 #cuadrante3 {
-      padding: 70px 10px;
-      box-sizing: border-box; }
-      body .members #member2 #cuadrante3 .nombretrabajo {
-        color: #1370DE; }
-      body .members #member2 #cuadrante3 .icon {
-        color: #333; }
-        body .members #member2 #cuadrante3 .icon:hover {
+    body .members #member1 {
+      position: relative;
+      background-color: #333;
+      color: whitesmoke;
+      text-align: right; }
+      body .members #member1 #cuadrante2 {
+        padding-top: 70px;
+        box-sizing: border-box;
+        padding: 70px 10px; }
+        @media screen and (max-width: 800px) {
+          body .members #member1 #cuadrante2 {
+            padding: 20px; } }
+        body .members #member1 #cuadrante2 .nombretrabajo {
+          color: #66E7C2; }
+          @media screen and (max-width: 800px) {
+            body .members #member1 #cuadrante2 .nombretrabajo {
+              font-size: 17px;
+              transition: 1s;
+              text-alignt: center; } }
+    body .members #member2 {
+      text-align: right; }
+      body .members #member2 .cuadranteWrapper {
+        padding: 0px 250px 10px 250px; }
+        @media screen and (max-width: 800px) {
+          body .members #member2 .cuadranteWrapper {
+            padding: 40px;
+            text-alignt: center; } }
+      body .members #member2 #cuadrante3 {
+        padding: 70px 10px;
+        box-sizing: border-box; }
+        body .members #member2 #cuadrante3 .nombretrabajo {
           color: #1370DE; }
+        body .members #member2 #cuadrante3 .icon {
+          color: #333; }
+          body .members #member2 #cuadrante3 .icon:hover {
+            color: #1370DE; }
 
 /*# sourceMappingURL=estilos.css.map */

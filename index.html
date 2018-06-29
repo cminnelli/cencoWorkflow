@@ -18,8 +18,8 @@
 
 	<!-- RIVESCRIPT -->
 	<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
-	<script src="/js/chatBot/chatBot.js"></script>	
-		
+	<!-- 	<script src="/js/chatBot/chatBot.js"></script>	 -->
+
 
 	<!-- FIREBASE SCRIPT -->
 	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
@@ -43,269 +43,391 @@
 	<script src="/libs/angular/angular.min.js"></script>
 	<script src="/js/app.js"></script>
 	<script src="/js/controllers/mainController.js"></script>
-	<script src="/js/services/googleService.js"></script>
-
-
-
+	<script src="/js/services/google.js"></script>
+	<script src="/js/services/chatbot.js"></script>
 
 
 	<link href="https://unpkg.com/ionicons@4.0.0/dist/css/ionicons.min.css"rel="stylesheet"/>
 
-<body ng-init="initApp()" ng-app="myApp" ng-controller="mainController">
+	<body ng-init="initApp()" ng-app="myApp" ng-controller="mainController">
 
-<script>
-new WOW().init();
+		<script>
+			new WOW().init();
 
-</script>
-<div id="chatIcon">
-	<div class="wrapIcon">
-		<i class="icon ion-md-chatbubbles"></i>
-	</div>
-</div>
-
-<div id="chatBot">
-	<div id="minimize">
-		<p style="margin-bottom:0px"">Chatea con Broom</p>
-				<i id="close" class="icon ion-md-close"></i>
-	</div>
-	<div id="chatBody">
-		
-	</div>	
-	<div id="chatInput">
-		<div class="input-group">
-			<textarea id="chatInputBox" class="form-control" name="" id="" cols="30" rows="10"></textarea>
+		</script>
+		<div id="chatIcon">
+			<div class="wrapIcon">
+				<i class="icon ion-md-text"></i>
+			</div>
 		</div>
-	</div>
-</div>
+
+		<div id="chatBot">
+			<div id="minimize">
+				<p style="margin-bottom:0px"">Chatea con Broom</p>
+				<i id="close" class="icon ion-md-close"></i>
+				<i type="file" id="atach" class="icon ion-md-attach"></i>
+			</div>
+			<div id="chatBody">
+
+			</div>	
+			<div id="chatInput">
+				<div class="input-group">
+					<textarea ng-keypress="conversacion(e)" id="chatInputBox" class="form-control"  cols="30" rows="10" placeholder="escribinos lo que quieras!"></textarea>
+				</div>
+			</div>
+
+		</div>
 
 
 
-<!-- <header class="portada">
+		<!-- <header class="portada"> -->
+		<!--  <img  class="portadaImg" src="/imagenes/web/portada.jpg" alt="">	 -->
+<!-- 	 <img class="triangle" src="imagenes/web/triangle.png" alt="">	
+	 <img class="triangle2" src="imagenes/web/triangle2.png" alt="">
+	 <div class="blackboardMenu">
+	 	<ul>
+	 		<li>Home</li>
+	 		<li>SobreNosotros</li>
+	 		<li>Que hacemos?</li>
+	 		<li>Contactanos</li>
+	 		<li>Redes Sociales</li>
+	 		
+	 	</ul>
+	 	
+	 </div>
+				
+	</header>	 -->
 
-	<video src="videos/portada.mp4" type="video/mp4" autoplay muted></video>
-				<img class="triangle" src="imagenes/web/triangle.png" alt="">
-			<img class="triangle2" src="imagenes/web/triangle2.png" alt="">	
-</header>	
- -->
 <!-- sin barra de menu 
 
 -->
 
 
-<nav class=" navbar navbar-expand-lg navbar-light  broomNav">
+<!-- <nav class="broomNav">	
   <img class="logo" src="imagenes/web/logo.png" alt="">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Sobre Broom <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Proyectos</a>
-      <a class="nav-item nav-link" href="#">Conocenos</a>
-      <a class="nav-item nav-link" href="#">Dejanos tu mensaje</a>
-    </div>
-  </div>
-</nav>
+</nav> -->
 
- <section class="servicios">
+<section class="servicios">  
 
- 	<div class="servicioEncabezado">
-	 	<h2 class="sectionTitle1">Broom Servicios</h2>
-	 	<div class="servicioMenu">
-	 		<ul class="servicioList">
-	 			<li class="servicioItem" id="desarrolloWeb">Desarrollo Web   |  </li>
-	 			<li  class="servicioItem" id="desarrolloMobile">Desarrollo Mobile     | </li>
-	 			<li  class="servicioItem" id="render">Renders 3D   |  </li>
-	 		</ul>
-	 	</div> 		
- 	</div>
 
- 	<div class="servicioWrapper">
- 		<div class="slide desarrolloWeb">
- 			<h3>Desarrollo</h3>
- 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur animi beatae! Nesciunt optio delectus suscipit ipsa ullam veniam ipsam, aliquam laboriosam laudantium ut voluptatum eius quam omnis officia earum!</p>
- 		</div>
- 		<div class="slide desarrolloMobile">
- 			<h3>DesarrolloM</h3>
- 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis nihil asperiores, accusantium ea quis esse facilis itaque assumenda, consequuntur voluptatibus maiores nostrum, nam fugit quia excepturi qui tenetur similique a.</p>
- 		</div>
- 		<div class="slide render">
- 			<h3>Render</h3>
- 			<div class="proyectoWrapper">
- 			<div class="galeriaWrapper">
- 				<img class="render" src="imagenes/portfolioTomy/renders/render1.jpg" alt="">
- 				<img class="render" src="imagenes/portfolioTomy/renders/render2.jpg" alt="">
- 				<img class="render" src="imagenes/portfolioTomy/renders/render3.jpg" alt="">
- 				
- 			</div>
- 				
- 			</div>
- 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi atque, facere aperiam, sunt at officia iste, nulla recusandae ut consequuntur voluptatem amet distinctio repellendus eveniet asperiores delectus facilis ex deleniti.</p>
- 		</div>
- 		
- 	</div>
- 	
+	<div class="encabezado text-center">
 
+		<i class="icon iencabezado ion-md-code-working"></i><h2 class="display-4  ">Servicios <span class="font-weight-"> Broom </span></h2>
+
+		<div class="servicioMenu">
+			<ul class="servicioList">
+				<li class="servicioItem" id="desarrolloWeb">Desarrollo Web  </li>
+				<li  class="servicioItem" id="desarrolloMobile">Desarrollo Mobile</li>
+				<li  class="servicioItem" id="render">Renders 3D </li>
+			</ul>
+		</div> 
+	</div>           
+
+
+
+
+	<div class="servicioWrapper">
+
+		<div class="slide desarrolloWeb">
+			<div class="servicioEncabezado">
+					<img class="triangle2" src="imagenes/web/triangle2.png" alt="">
+					<img class="triangle" src="imagenes/web/triangle.png" alt="">                                               
+				<div class="transparencia"></div>
+				<div class="encabezadoText  centerPos">
+					<h3 class="servicioTitulo">::: Desarrollo Web</h3>
+					<p class="parrafo">Buscamos apasionadamente que la experiencia de usuario sea la más avanzada, hermosa y funcional posible</p>
 					
+				</div>
 
- </section>
-
-
-
-<section class="members">
-	<script>
-		
-		var rot = 0;
-		var trans = 10;
-		var zeta = 0;
-		var movimiento = 1
-
-		setInterval(function(){
-			rot += 90;
-			if  (movimiento  === 1){
-				
-	 			$(".cuboWrapper").css({
-					transform: "rotateX(" + 90 + "deg) rotateZ("+10+ "deg) rotateY("+30 + "deg)  translateZ(" + 0 + "px)",
-				});	
-
-			movimiento = 2;	
-			}else if (movimiento ===2){
-				$(".cuboWrapper").css({
-					transform: "rotateX(" + 0 + "deg) rotateZ("+95+ "deg) rotateY("+90 + "deg)  translateZ(" + -30 + "px)",
-				});
-
-				movimiento = 3;	
-
-			}else{
-
-	 			$(".cuboWrapper").css({
-					transform: "rotateX(" + -90 + "deg) rotateZ("+-45+ "deg) rotateY("+0 + "deg)  translateZ(" + 30+ "px)",
-				});	
-
-			movimiento = 1;
-			}
-		
-
-		},1000)
+				</div>
 
 
+				<div class="servicioInfo">
 
 
-
-		
-	</script>
-		<div class="encabezado text-center">
-			
-			<i class="icon iencabezado ion-md-infinite"></i><h2 class="sectionTitle font-weight-light ">Miembros <span class="font-weight-italic"> Broom </span></h2>
-		</div>
-		<div id="member1" >
-			<img class="triangle" src="imagenes/web/triangle.png" alt="">
-			<img class="triangle2" src="imagenes/web/triangle2.png" alt="">	
-			<div class="cuadrantWrapper">
-				<div class="row">
-
-					<div id="cuadrante2" class="col-xs-12 col-lg-6">
-					
-						<h3 class="font-weight-bold"> <i class="icon ion-logo-codepen"></i> Charlie Minnelli</h3>
-						<h4 class="nombretrabajo text-uppercase">Desarrollador Web Full Stack</h4>
-						<p class="font-weight-light parrafo">Hola, soy Charlie, soy Licenciado en administracion de empresas y desarrollador. Me encanta el 
-						mundo de la tecnología, por eso hoy quiero ver crecer tu start up de modo de que...bla</p>
-
-						<ul class="socialIcons">
-							<li><i class="icon ion-logo-facebook"></i></li>
-							<li><i class="icon ion-logo-instagram"></i></li>
-							<li><i class="icon ion-logo-linkedin"></i></li>
-							<li><i class="icon ion-logo-twitter"></i></li>
-
-						</ul>
+					<div class="row serviceInfoWrapper">
 	
+						<div class="col-xs-12 col-md-3">
+							<h3 class="subtitulo">#Que Ofrecemos</h3>
+						</div>
+
+						<div class="col-xs-12 col-md-9">
+							<div class="row">
+								<div  ng-repeat=" s in servicios.charlie" class="col-xs-12 col-md-6  infoItem ">
+									<div class="row">
+										
+																
+										<div class="col-md-3">
+										<img class="infoIcon img-responsive" src="{{'imagenes/icons/'+ s.image}}">
+											
+										</div>
+										<div class="col-md-9">
+											<h4 class="subtitulo2">{{s.nombre}}</h4>
+											<p class="parrafo2">{{s.descripcion}}</p>
+											<p class="test" ng-show="{{s.prueba}}"><i class="icon ion-md-play"></i>  Hacer prueba</p>									
+										</div>
 							
-		
+									</div>
+								</div>
+							</div>
+							
+						</div>
+	
+
 					</div>
-					<div id="cuadrante1" class="col-xs-12 col-lg-6 wow bounceInUp ">
-						<img class="avatar" src="imagenes/web/charlieAvatar.png" alt="">
-					 	<div class="cuboContainer">
-						 	<div class="cuboWrapper">
-						 		<div class="lados front">
-						 			<img src="imagenes/skills/javascript.png" alt="">
-						 		</div>
-						 		<div class="lados back">
-						 			<img src="imagenes/skills/angular.png" alt="">
-						 		</div>
-						 		<div class="lados top">
-						 			<img src="imagenes/skills/mongo.png" alt="">
-						 		</div>
-						 		<div class="lados bottom">
-						 			<img src="imagenes/skills/html.png" alt="">
-						 		</div>
-						 		<div class="lados right">
-						 			<img src="imagenes/skills/firebase.png" alt="">
-						 		</div>
-						 		<div class="lados left">
-						 			<img src="imagenes/skills/node.png" alt="">
-						 		</div>
-						 	</div>
-					 	</div>						
-					</div>	
-					
-				</div>					
-			</div>
+
 			
+				</div>
+
+
+
+				<div class="servicioHerramientas">
+
+					<h3 class="subtitulo">.: [ Heramientas ]</h3>
+					<img class="triangle" src="imagenes/web/triangle.png" alt="">
+					<img class="triangle2" src="imagenes/web/triangle2.png" alt="">
+
+					<div class="row">
+						<div class="col-xs-4 col-md-1">
+						
+							<img src="" class="img-responsive">
+						</div>
+						<div class="col-xs-4 col-md-1">
+						
+							<img src="" class="img-responsive">
+						</div>
+					</div>
+
+				</div>
+
+
+
+				<div class="row servicioPortfolio">
+
+					<div class="col-xs-12 col-md-3">
+						<h3 class="subtitulo">#Portfolio</h3>					
+					</div>
+
+					<div class="col-xs-12 col-md-9">
+						<div class="row portfolioWrapper">
+
+
+							<div class="portfolioItem col-xs-12 col-md-4">
+								<div class="transparencia"></div>
+								<img src="imagenes/portfolioCharlie/ingenioCapture.png" alt="">
+								<div class="portfolioText">
+									<p class="porfolioTitulo">Ingenio Tecnico</p>
+									<p class="portfolioDescripcion">Pagina web institucional</p>
+									<i class="icon ion-md-cafe"></i>
+								</div>
+							</div>
+
+							<div class="portfolioItem col-xs-12 col-md-4">
+								<div class="transparencia"></div>
+								<img src="imagenes/portfolioCharlie/autosCapture.png" alt="">
+								<div class="portfolioText">
+									<p class="porfolioTitulo">Comfort-Car</p>
+									<p class="portfolioDescripcion">Pagina web institucional</p>
+									<i class="icon ion-md-cafe"></i>
+								</div>
+							</div>
+
+							<div class="portfolioItem  col-xs-12 col-md-4">
+								<div class="transparencia"></div>
+								<img src="imagenes/portfolioCharlie/portfolioCapture.png" alt="">
+								<div class="portfolioText">
+									<p class="porfolioTitulo">Tu Portfolio</p>
+									<p class="portfolioDescripcion">Pagina web institucional</p>
+									<i class="icon ion-md-cafe"></i>
+								</div>
+							</div>
+
+
+						</div>
+						
+					</div>
+
+
+				</div>
+
+			</div>
+
+
+
+			<div class="slide desarrolloMobile">
+
+
+
+			</div>
+
+
+
+			<div class="slide render">
+
+
+
+			</div>
+
+
 
 		</div>
 
-		<div id="member2" >
-			<div class="cuadranteWrapper">
-				<div class="row">
-					<div id="cuadrante3" class="col-xs-12 col-lg-6">
-						<h3 class="font-weight-bold"><i class="icon ion-md-cube"></i> Tomás Minnelli </h3>
-						<h4 class="nombretrabajo text-uppercase">Modelador 3D</h4>
-						<p class="font-weight-light parrafo">Hola, soy Tomy, soy futuro arquitecto y modelador 3d, me gusta jugar a la play y hacerme el capo modelando 3D y edificios locos, por eso hoy quiero ver crecer tu start up de modo de que...bla</p>
-							<ul class="socialIcons">
-								<li><i class="icon ion-logo-facebook"></i></li>
-								<li><i class="icon ion-logo-instagram"></i></li>
-								<li><i class="icon ion-logo-linkedin"></i></li>
-								<li><i class="icon ion-logo-twitter"></i></li>
 
-							</ul>
+
+		<section class="members">
+			<script>
+
+				var rot = 0;
+				var trans = 10;
+				var zeta = 0;
+				var movimiento = 1
+
+				setInterval(function(){
+					rot += 90;
+					if  (movimiento  === 1){
+
+						$(".cuboWrapper").css({
+							transform: "rotateX(" + 90 + "deg) rotateZ("+10+ "deg) rotateY("+30 + "deg)  translateZ(" + 0 + "px)",
+						});	
+
+						movimiento = 2;	
+					}else if (movimiento ===2){
+						$(".cuboWrapper").css({
+							transform: "rotateX(" + 0 + "deg) rotateZ("+95+ "deg) rotateY("+90 + "deg)  translateZ(" + -30 + "px)",
+						});
+
+						movimiento = 3;	
+
+					}else{
+
+						$(".cuboWrapper").css({
+							transform: "rotateX(" + -90 + "deg) rotateZ("+-45+ "deg) rotateY("+0 + "deg)  translateZ(" + 30+ "px)",
+						});	
+
+						movimiento = 1;
+					}
+
+
+				},1000)
+
+
+
+
+
+
+			</script>
+			<div class="encabezado text-center">
+
+				<i class="icon iencabezado ion-md-infinite"></i><h2 class="display-4">Miembros <span class="font-weight-italic"> Broom </span></h2>
+			</div>
+			<div id="member1" >
+				<img class="triangle" src="imagenes/web/triangle.png" alt="">
+				<img class="triangle2" src="imagenes/web/triangle2.png" alt="">	
+				<div class="cuadrantWrapper">
+					<div class="row">
+
+						<div id="cuadrante2" class="col-xs-12 col-lg-6">
+
+							<h3 class="font-weight-bold"> <i class="icon ion-logo-codepen"></i> Charlie Minnelli</h3>
+							<h4 class="nombretrabajo text-uppercase">Desarrollador Web Full Stack</h4>
+							<p class="font-weight-light parrafo">Hola, soy Charlie, soy Licenciado en administracion de empresas y desarrollador. Me encanta el 
+								mundo de la tecnología, por eso hoy quiero ver crecer tu start up de modo de que...bla</p>
+
+								<ul class="socialIcons">
+									<li><i class="icon ion-logo-facebook"></i></li>
+									<li><i class="icon ion-logo-instagram"></i></li>
+									<li><i class="icon ion-logo-linkedin"></i></li>
+									<li><i class="icon ion-logo-twitter"></i></li>
+
+								</ul>
+
+
+
+							</div>
+							<div id="cuadrante1" class="col-xs-12 col-lg-6 wow bounceInUp ">
+								<img class="avatar" src="imagenes/web/charlieAvatar.png" alt="">
+								<div class="cuboContainer">
+									<div class="cuboWrapper">
+										<div class="lados front">
+											<img src="imagenes/skills/javascript.png" alt="">
+										</div>
+										<div class="lados back">
+											<img src="imagenes/skills/angular.png" alt="">
+										</div>
+										<div class="lados top">
+											<img src="imagenes/skills/mongo.png" alt="">
+										</div>
+										<div class="lados bottom">
+											<img src="imagenes/skills/html.png" alt="">
+										</div>
+										<div class="lados right">
+											<img src="imagenes/skills/firebase.png" alt="">
+										</div>
+										<div class="lados left">
+											<img src="imagenes/skills/node.png" alt="">
+										</div>
+									</div>
+								</div>						
+							</div>	
+
+						</div>					
 					</div>
-					<div id="cuadrante4" class="col-xs-12 col-lg-6 wow bounceInUp">						
-						<img class="avatar" src="imagenes/web/tomyAvatar.png" alt="">
-						 	<div class="cuboContainer">
-							 	<div class="cuboWrapper">
-							 		<div class="lados front">
-							 			<img src="imagenes/skills/vray.png" alt="">
-							 		</div>
-							 		<div class="lados back">
-							 			<img src="imagenes/skills/illustrator.png" alt="">
-							 		</div>
-							 		<div class="lados top">
-							 			<img src="imagenes/skills/aftereffects.png" alt="">
-							 		</div>
-							 		<div class="lados bottom">
-							 			<img src="imagenes/skills/3dmax.jpg" alt="">
-							 		</div>
-							 		<div class="lados right">
-							 			<img src="imagenes/skills/autocad.png" alt="">
-							 		</div>
-							 		<div class="lados left">
-							 			<img src="imagenes/skills/autocad.png" alt="">
-							 		</div>
-							 	</div>
-						 	</div>							
-					</div>
-
-				</div>				
-			</div>				
-		</div>
 
 
+				</div>
+
+				<div id="member2" >
+					<div class="cuadranteWrapper">
+						<div class="row">
+							<div id="cuadrante3" class="col-xs-12 col-lg-6">
+								<h3 class="font-weight-bold"><i class="icon ion-md-cube"></i> Tomás Minnelli </h3>
+								<h4 class="nombretrabajo text-uppercase">Modelador 3D</h4>
+								<p class="font-weight-light parrafo">Hola, soy Tomy, soy futuro arquitecto y modelador 3d, me gusta jugar a la play y hacerme el capo modelando 3D y edificios locos, por eso hoy quiero ver crecer tu start up de modo de que...bla</p>
+								<ul class="socialIcons">
+									<li><i class="icon ion-logo-facebook"></i></li>
+									<li><i class="icon ion-logo-instagram"></i></li>
+									<li><i class="icon ion-logo-linkedin"></i></li>
+									<li><i class="icon ion-logo-twitter"></i></li>
+
+								</ul>
+							</div>
+							<div id="cuadrante4" class="col-xs-12 col-lg-6 wow bounceInUp">						
+								<img class="avatar" src="imagenes/web/tomyAvatar.png" alt="">
+								<div class="cuboContainer">
+									<div class="cuboWrapper">
+										<div class="lados front">
+											<img src="imagenes/skills/vray.png" alt="">
+										</div>
+										<div class="lados back">
+											<img src="imagenes/skills/illustrator.png" alt="">
+										</div>
+										<div class="lados top">
+											<img src="imagenes/skills/aftereffects.png" alt="">
+										</div>
+										<div class="lados bottom">
+											<img src="imagenes/skills/3dmax.jpg" alt="">
+										</div>
+										<div class="lados right">
+											<img src="imagenes/skills/autocad.png" alt="">
+										</div>
+										<div class="lados left">
+											<img src="imagenes/skills/autocad.png" alt="">
+										</div>
+									</div>
+								</div>							
+							</div>
+
+						</div>				
+					</div>				
+				</div>
 
 
-</section>
+
+
+			</section>
 
 
 
 
-</body>
-</html>
+		</body>
+		</html>
