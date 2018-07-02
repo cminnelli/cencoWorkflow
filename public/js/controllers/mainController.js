@@ -60,33 +60,61 @@ app.controller("mainController" , function($scope , google , chatbot){
     charlie:[
     {nombre:"Javascript" , 
     descripcion: "Diseño que se adapta a cualquier dispositivo: notebooks, pc, tablets y moviles!",
-    image:"022-management.png",
+    image:"javascript.png",
   },
       {nombre:"Jquery" , 
     descripcion: "Buscamos apasionadamente que la experiencia de usuario sea lo mejor",
-    image:"052-user-1.png",
+    image:"jquery.png",
   },
       {nombre:"Bootrstrap" , 
     descripcion: "Nos interesa convertirnos en sus socios digitales, entendiendo sus necesidades y blabla",
-    image:"003-deal.png",
+    image:"bootstrap.png",
   },
       {nombre:"NodeJs" , 
     descripcion: "Los chatbots son herramientas de gran utilidad ya que muchas veces suplen a la persona blabla",
-    image:"048-forum.png",
+    image:"node.png",
   },
       {nombre:"AngularJs" , 
     descripcion: "Usamos firebase! una herramienta de google para almacenar e interactuar con datos en tiempo real",
-    image:"016-computing-cloud.png",
+    image:"angular.png",
   },
       {nombre:"MongoDb" , 
     descripcion: "Maneja tus productos a tu forma, edita y elimina!",
-    image:"033-faq.png",
+    image:"mongo",
   },
      {nombre:"Firebase" , 
     descripcion: "Maneja tus productos a tu forma, edita y elimina!",
-    image:"033-faq.png",
+    image:"firebase.png",
   }
 
+
+    ],
+    tomy:[]
+  }
+
+  $scope.portfolio = {
+
+    charlie:[
+    {nombre:"Ingenio Técnico" , 
+    categoria: "Consultora RRHH",
+    tipo: "Institucional / Landing Page / CMS ",
+    image:"ingenioCapture.png",
+  },
+     {nombre:"AutosMinn" , 
+      categoria: "Concesionario",
+       tipo: "Institucional / Landing Page / CMS ",
+      image:"autosCapture.png",
+  },
+      {nombre:"Sistema RRHH" , 
+      categoria: "Micrositio",
+       tipo: "Aplication Web / CMS ",
+      image:"seleccionCapture.png",
+   },
+      {nombre:"Portfolio" , 
+      categoria: "Portfolios",
+       tipo: "Lading Page",
+      image:"portfolioCapture.png",
+   }
 
     ],
     tomy:[]

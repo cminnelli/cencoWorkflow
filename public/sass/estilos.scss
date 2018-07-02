@@ -31,7 +31,7 @@
 //ESTILO WEB
 $black-modern:#333;
 $green-soft:#66E7C2;
-$blue-bright:#1370DE;
+$blue-bright:#56BFDC;
 $violet-soft:#6F6CC3;
 $parrafo:"Raleway", serif;
 $parrafo2:"Raleway", serif;
@@ -467,46 +467,46 @@ body{
 			font-family:"Quicksand";
 			letter-spacing:-1px;
 		}
-			.servicioMenu{
+		.servicioMenu{
 			color:$black-modern; 
-						@media screen and (max-weight:900px){
-							font-size:1px;
-							color:red;
-							border:1px solid blue;
-						} 
+			@media screen and (max-weight:900px){
+				font-size:1px;
+				color:red;
+				border:1px solid blue;
+			} 
 
-				.servicioList{
+			.servicioList{
 
-					list-style:none;
-					padding:0px; 
-
-
-					.servicioItem{
-						display:inline-block;
-						padding:10px 10px 10px 0px;
-						font-size:15px;
-						cursor:pointer;
-						color:grey;
-						letter-spacing:1.2px;
-						font-family:"Raleway";
+				list-style:none;
+				padding:0px; 
 
 
-					}
+				.servicioItem{
+					display:inline-block;
+					padding:10px 10px 10px 0px;
+					font-size:15px;
+					cursor:pointer;
+					color:grey;
+					letter-spacing:1.2px;
+					font-family:"Raleway";
+
 
 				}
 
-			}                                 
+			}
+
+		}                                 
 
 		
 
 
 
 		.servicioWrapper{
-			height:2500px;
+			height:3300px;
 			overflow:hidden;
 			position:relative;
 			transition:0.5s;
-                                                                  
+
 
 			.slide{
 				position:absolute;
@@ -517,42 +517,31 @@ body{
 				.servicioEncabezado{
 					position:relative;
 					background-color:whitesmoke;
-				//	background:url("https://images.pexels.com/photos/436775/pexels-photo-436775.jpeg?auto=compress&cs=tinysrgb&h=1500&w=1500");
-					background-image:linear-gradient( $blue-bright 20% , lighten($blue-bright , 20%) );
+					background:url("../imagenes/web/webService.png");
 					background-size:cover;
 					//background-attachment:fixed;
-					min-height:250px;
+					min-height:330px;
 					color:white;
 
+					img{
+						height:270px;
+					}	
+
 					.encabezadoText{
-						width:80%;						
+						width:80%;	
+						position:absolute;
+						bottom:8%;
+						left:50%;
+						transform:translate(-50%,0);
+
 						.servicioTitulo{
-							font-family:"Montserrat" , "Serif";
-							color:whitesmoke;
-							font-weight:700;
-							font-size:28px;
+							font-family:"Permanent marker" , "Serif";
+							color:$black-modern;
+							font-size:25px;
 							z-index:9999;
 
 						}
-						.parrafo{
-							color:whitesmoke;
-						}					
-					}
-					@media screen and (min-width:800px){
-						min-height:450px;
 
-						.encabezadoText{						
-							.servicioTitulo{
-								color:whitesmoke;
-								font-weight:700;
-								font-size:40px;
-								z-index:9999;
-
-							}
-							.parrafo{
-								font-size:20px;
-							}						
-						}	
 					}
 
 				}
@@ -574,8 +563,9 @@ body{
 						.infoItem{							
 							text-align:left;
 							padding:10px;
+
 							img{
-								padding:8px;
+								padding:10px;
 								text-align:right;
 							}
 
@@ -594,10 +584,9 @@ body{
 							}
 
 							@media screen and (max-width:900px){
-							text-align:center;
-
-
+								text-align:center;
 							}
+
 						}
 						
 					}
@@ -605,23 +594,38 @@ body{
 				}
 
 				.servicioHerramientas{
+					-webkit-filter: grayscale(100%);
 					position:relative;
 					color:whitesmoke;
 					padding:70px 50px;
 					background-color:$black-modern;
 					background:linear-gradient(10% , $black-modern 50%, lighten($black-modern , 20%) 10%);
+				
+					.herramientasWrapper{
+						-webkit-filter:greyscale(100%);
+						width:80%;
+						margin:0 auto;
+						padding:30px;
+						.skillItem{
+							.skillImg{
+								padding:3px;
+								height:50px;
+								filter:greyscale(100%);
+							}
+						}
+
+					}			
+	
 				}
 
 				.servicioPortfolio{
-					padding:20px 40px;
-					transform-style:preserve-3d;
-					transform:rotateZ(-5deg);
+					padding:90px;
+
 					@media screen and (max-width:600px){
-						transform:rotateZ(0deg);
+						padding:20px;
 					}
 
-
-					.subtitulo{
+					.retro{
 						padding:10px 0px;
 						background-color:$black-modern;
 						color:whitesmoke;
@@ -633,28 +637,27 @@ body{
 					}
 					
 					.portfolioWrapper{
-						box-shadow:grey 0px 1px 15px 2px;
-						perspective:1000px;
+						//box-shadow:grey 0px 1px 15px 2px;
+
 						@media screen and (max-width:600px){
-							padding:10px;
-							transform:rotateZ(0deg);
+							padding:5px;
 						}
 
-						.portfolioItem{
-				
+						.portfolioItem{				
 							overflow:hidden;
 							cursor:pointer;
 							padding:0px;
 							boxing-size:border-box;
 							height:300px;
-							margin-bottom:0px;
+							margin-bottom:20px;
+							@media screen and (max-width:600px){
+								padding:20px;
+							}
 							&:hover img{
 								transition:all ease-in 0.5s;
 								transform:scale(1.02) perspective(300px) translateY(-200px)  ;
 								transform:rotateY(-5deg) ;  
 							}
-
-
 
 							&:hover .transparencia{
 								background-color:rgba(51,51,51,0.90);
@@ -666,7 +669,6 @@ body{
 							}
 
 							img{
-
 								z-index:0;
 								position:absolute;
 								top:0;  left:0;
@@ -709,17 +711,14 @@ body{
 
 							}
 
-
-
 							.transparencia{
 								z-index:10;
 								position:absolute;
 								height:100%;
 								width:100%;
 								top:0 ; left:0;
-	
-
 							}
+
 						}
 
 					}

@@ -270,12 +270,12 @@ body {
         background-color: #EEEEEE;
         float: left; }
       body #chatBot #chatBody .msgClient {
-        background-color: #56BFDC;
+        background-color: #1370DE;
         color: whitesmoke;
         float: right; }
     body #chatBot #chatInput {
       height: 8%;
-      border-top: 1px solid #56BFDC; }
+      border-top: 1px solid #1370DE; }
       body #chatBot #chatInput input {
         width: 100%;
         border: none;
@@ -330,7 +330,7 @@ body {
           letter-spacing: 1.2px;
           font-family: "Raleway"; }
     body .servicios .servicioWrapper {
-      height: 3300px;
+      height: 2500px;
       overflow: hidden;
       position: relative;
       transition: 0.5s; }
@@ -343,23 +343,30 @@ body {
         body .servicios .servicioWrapper .slide .servicioEncabezado {
           position: relative;
           background-color: whitesmoke;
-          background: url("../imagenes/web/webService.png");
+          background-image: linear-gradient(#1370DE 20%, #65a6f2);
           background-size: cover;
-          min-height: 330px;
+          min-height: 250px;
           color: white; }
-          body .servicios .servicioWrapper .slide .servicioEncabezado img {
-            height: 270px; }
           body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText {
-            width: 80%;
-            position: absolute;
-            bottom: 8%;
-            left: 50%;
-            transform: translate(-50%, 0); }
+            width: 80%; }
             body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .servicioTitulo {
-              font-family: "Permanent marker" , "Serif";
-              color: #333;
-              font-size: 25px;
+              font-family: "Montserrat" , "Serif";
+              color: whitesmoke;
+              font-weight: 700;
+              font-size: 28px;
               z-index: 9999; }
+            body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .parrafo {
+              color: whitesmoke; }
+          @media screen and (min-width: 800px) {
+            body .servicios .servicioWrapper .slide .servicioEncabezado {
+              min-height: 450px; }
+              body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .servicioTitulo {
+                color: whitesmoke;
+                font-weight: 700;
+                font-size: 40px;
+                z-index: 9999; }
+              body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .parrafo {
+                font-size: 20px; } }
         body .servicios .servicioWrapper .slide .servicioInfo {
           position: relative; }
           body .servicios .servicioWrapper .slide .servicioInfo .subtitulo, body .servicios .servicioWrapper .slide .servicioInfo .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .servicioInfo .porfolioTitulo {
@@ -375,107 +382,93 @@ body {
               text-align: left;
               padding: 10px; }
               body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem img {
-                padding: 10px;
+                padding: 8px;
                 text-align: right; }
               body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .infoIcon {
                 height: 65px; }
               body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test {
                 font-weight: 300;
-                color: #56BFDC;
+                color: #1370DE;
                 cursor: pointer; }
                 body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test .icon {
-                  color: #56BFDC;
+                  color: #1370DE;
                   font-size: 13px; }
               @media screen and (max-width: 900px) {
                 body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem {
                   text-align: center; } }
         body .servicios .servicioWrapper .slide .servicioHerramientas {
-          -webkit-filter: grayscale(100%);
           position: relative;
           color: whitesmoke;
           padding: 70px 50px;
           background-color: #333;
           background: linear-gradient(10%, #333 50%, #666666 10%); }
-          body .servicios .servicioWrapper .slide .servicioHerramientas .herramientasWrapper {
-            -webkit-filter: greyscale(100%);
-            width: 80%;
-            margin: 0 auto;
-            padding: 30px; }
-            body .servicios .servicioWrapper .slide .servicioHerramientas .herramientasWrapper .skillItem .skillImg {
-              padding: 3px;
-              height: 50px;
-              filter: greyscale(100%); }
         body .servicios .servicioWrapper .slide .servicioPortfolio {
-          padding: 90px; }
-          @media screen and (max-width: 600px) {
-            body .servicios .servicioWrapper .slide .servicioPortfolio {
-              padding: 20px; } }
-          body .servicios .servicioWrapper .slide .servicioPortfolio .retro {
+          padding: 20px 40px; }
+          body .servicios .servicioWrapper .slide .servicioPortfolio .subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
             padding: 10px 0px;
             background-color: #333;
             color: whitesmoke; }
             @media screen and (max-width: 300px) {
-              body .servicios .servicioWrapper .slide .servicioPortfolio .retro {
+              body .servicios .servicioWrapper .slide .servicioPortfolio .subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
                 background-color: transparent;
                 color: #333; } }
-          @media screen and (max-width: 600px) {
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
-              padding: 5px; } }
-          body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
-            overflow: hidden;
-            cursor: pointer;
-            padding: 0px;
-            boxing-size: border-box;
-            height: 300px;
-            margin-bottom: 20px; }
+          body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
+            box-shadow: grey 0px 1px 15px 2px; }
             @media screen and (max-width: 600px) {
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
-                padding: 20px; } }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover img {
-              transition: all ease-in 0.5s;
-              transform: scale(1.02) perspective(300px) translateY(-200px);
-              transform: rotateY(-5deg); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .transparencia {
-              background-color: rgba(51, 51, 51, 0.9); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .portfolioText {
-              visibility: visible;
-              transition: all  1 ease-out; }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem img {
-              z-index: 0;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              transition: all 0.15s ease-out;
-              transform: scale(1.12); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText {
-              visibility: hidden;
-              z-index: 20;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              width: 80%;
-              margin: 0 auto;
-              position: absolute;
-              color: whitesmoke; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .icon {
-                font-size: 35px;
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
+                padding: 10px; } }
+            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
+              overflow: hidden;
+              cursor: pointer;
+              padding: 0px;
+              boxing-size: border-box;
+              height: 300px;
+              margin-bottom: 0px; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover img {
+                transition: all ease-in 0.5s;
+                transform: scale(1.02) perspective(300px) translateY(-200px);
+                transform: rotateY(-5deg); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .transparencia {
+                background-color: rgba(51, 51, 51, 0.9); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .portfolioText {
+                visibility: visible;
+                transition: all  1 ease-out; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem img {
+                z-index: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transition: all 0.15s ease-out;
+                transform: scale(1.12); }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText {
+                visibility: hidden;
+                z-index: 20;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                margin: 0 auto;
+                position: absolute;
                 color: whitesmoke; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
-                color: #56BFDC;
-                margin: 0;
-                font-weight: 700; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .portfolioDescripcion {
-                color: whitesmoke;
-                margin: 0;
-                padding: 2px; }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .transparencia {
-              z-index: 10;
-              position: absolute;
-              height: 100%;
-              width: 100%;
-              top: 0;
-              left: 0; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .icon {
+                  font-size: 35px;
+                  color: whitesmoke; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
+                  color: #1370DE;
+                  margin: 0;
+                  font-weight: 700; }
+                body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .portfolioDescripcion {
+                  color: whitesmoke;
+                  margin: 0;
+                  padding: 2px; }
+              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .transparencia {
+                z-index: 10;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0; }
       body .servicios .servicioWrapper .desarrolloWeb {
         transition: 1.5s;
         width: 100%;
@@ -527,10 +520,10 @@ body {
         padding: 70px 10px;
         box-sizing: border-box; }
         body .members #member2 #cuadrante3 .nombretrabajo {
-          color: #56BFDC; }
+          color: #1370DE; }
         body .members #member2 #cuadrante3 .icon {
           color: #333; }
           body .members #member2 #cuadrante3 .icon:hover {
-            color: #56BFDC; }
+            color: #1370DE; }
 
-/*# sourceMappingURL=estilos.css.map */
+/*# sourceMappingURL=estilos..css.map */
