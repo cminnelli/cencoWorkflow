@@ -62,7 +62,7 @@ $newwhite:#EFEFEF;
 	}
 	.icon{
 		color:$black-modern;
-		font-size:20px;
+		font-size:22px;
 		padding:5px;
 		transition:0.5s;
 		&:hover{
@@ -76,32 +76,42 @@ $newwhite:#EFEFEF;
 	margin: 0px;;
 }
 
+.charlieBut{
+	border-radius:30px;
+	padding:5px;
+	background-color:$green-soft;
+	color:white;
+	border-style:none;
+	width:110px;
+}
 
 
 
 // SERVICIOS
 
-.portfolioSeccion{
-	overflow:hidden;
-	background:linear-gradient(135deg, #6f42c1 0%, #4582EC 100%);
-	background:whitesmoke;
-	height:550px;;
-	.imageWrapper{
-		width:400%;
-		height:100%;
-		padding:50px;
-		perspective:300px;
-		.image{
-			transition:all ease-in-out 1.5s;
-			width:500px;
+.servicio{
+	padding:40px;
+	background-color:whitesmoke;
+	background: linear-gradient(135deg, #6f42c1 0%, #4882EC 100%);
+	color:white;
+	transition:1s;
+	.portfolioWrapper{
+		.portfolioItem{
+			.itemDescripcion{
+				padding:15px;
 
-			
-			padding:10px;
-
-			display:inline-block;
-			opacity:0.1;
-			transform:translateZ(-30px);
-	
+			}
+			.itemImage{
+				text-align:center;
+				
+				.portfolioView{
+					background-color:grey;
+					opacity:0.8;
+					width:80%;
+					height:200px;
+					margin-bottom:30px;
+				}
+			}
 		}
 	}
 }
@@ -121,6 +131,7 @@ $newwhite:#EFEFEF;
 		}
 
 		.charlie{
+			margin-bottom:50px;
 			.avatarWrapp{
 				height:90%;
 				margin:auto;
