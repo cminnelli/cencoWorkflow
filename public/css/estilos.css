@@ -1,28 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=ABeeZee:400i|Abril+Fatface|Amatic+SC|IBM+Plex+Sans:300|Indie+Flower|Julius+Sans+One|Lato|Libre+Franklin:200,200i|Lobster|Lora:400i|Monoton|Montserrat|Open+Sans|PT+Serif:400,700|Pacifico|Permanent+Marker|Playfair+Display:400,700|Poiret+One|Questrial|Quicksand:300|Raleway:200,400|Roboto|Rufina|Special+Elite|Spectral:300,400|Ubuntu");
-@import url("https://fonts.googleapis.com/css?family=Merriweather:300,400,800");
+@import url("data:application/octet-stream;base64,QGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdNZXJyaXdlYXRoZXInOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogMzAwOwogIHNyYzogbG9jYWwoJ01lcnJpd2VhdGhlciBMaWdodCcpLCBsb2NhbCgnTWVycml3ZWF0aGVyLUxpZ2h0JyksIHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3MvbWVycml3ZWF0aGVyL3YxOS91LTRuMHF5cmlRd2xPcmhTdm93S19sNTIxd1JaV01mXy50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ01lcnJpd2VhdGhlcic7CiAgZm9udC1zdHlsZTogbm9ybWFsOwogIGZvbnQtd2VpZ2h0OiA0MDA7CiAgc3JjOiBsb2NhbCgnTWVycml3ZWF0aGVyIFJlZ3VsYXInKSwgbG9jYWwoJ01lcnJpd2VhdGhlci1SZWd1bGFyJyksIHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3MvbWVycml3ZWF0aGVyL3YxOS91LTQ0MHF5cmlRd2xPcmhTdm93S19sNS1mQ1pKLnR0ZikgZm9ybWF0KCd0cnVldHlwZScpOwp9Cg==");
 .centerPos {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-
-cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cuadrante4 {
-  padding: 10px;
-  box-sizing: border-box; }
-  cuadranteImagen .avatar, body .members #member1 #cuadrante1 .avatar, body .members #member2 #cuadrante4 .avatar {
-    width: 40%;
-    min-width: 300px;
-    margin: 0 auto;
-    display: block;
-    transition: 3s;
-    text-align: center; }
-    cuadranteImagen .avatar:hover, body .members #member1 #cuadrante1 .avatar:hover, body .members #member2 #cuadrante4 .avatar:hover {
-      transition: 3s; }
-
-.encabezado {
-  padding: 30px 10px; }
-  .encabezado .iencabezado {
-    font-size: 40px; }
 
 .socialIcons {
   padding: 0;
@@ -34,8 +16,8 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
     display: inline-block;
     cursor: pointer; }
   .socialIcons .icon {
-    color: white;
-    font-size: 30px;
+    color: #333;
+    font-size: 20px;
     padding: 5px;
     transition: 0.5s; }
     .socialIcons .icon:hover {
@@ -45,492 +27,45 @@ cuadranteImagen, body .members #member1 #cuadrante1, body .members #member2 #cua
 .row {
   margin: 0px; }
 
-.cuboContainer {
-  display: flex;
-  justify-content: center;
-  perspective: 800px;
-  -webkit-perspective: 800px;
-  margin: 30px;
-  transition: 6s;
-  position: absolute;
-  top: 0%;
-  left: 70%; }
-  .cuboContainer .cuboWrapper {
-    position: absolute;
-    transition: 2s;
-    width: 90px;
-    height: 90px;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: rotateX(10deg) rotateZ(15deg);
-    /*box-shadow:grey -4px 9px 24px 5px;*/ }
-    .cuboContainer .cuboWrapper .lados {
-      height: 100%;
-      width: 100%;
-      opacity: 0.65;
-      backface-visibility: hidden;
-      position: relative; }
-      .cuboContainer .cuboWrapper .lados h3 {
-        padding: 10px; }
-      .cuboContainer .cuboWrapper .lados img {
-        position: absolute;
-        width: 95%;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        padding: 10px;
-        box-sizing: border-box; }
-    .cuboContainer .cuboWrapper .front {
-      position: absolute;
-      background-color: #1370DF;
-      opacity: 0.9;
-      z-index: 100;
-      transform: translateZ(45px);
-      -webkit-transform: translateZ(45px);
-      box-shadow: 0px 0px -10px -30px; }
-    .cuboContainer .cuboWrapper .back {
-      position: absolute;
-      background-color: #36ABCC;
-      transform: translateZ(-45px) rotateY(-180deg);
-      -webkit-transform: translateZ(-45px) rotateY(-180deg); }
-    .cuboContainer .cuboWrapper .top {
-      position: absolute;
-      background-color: #5DFFCA;
-      transform: translateY(-45px) rotateY(90deg);
-      -webkit-transform: translateY(-45px) rotateX(90deg); }
-    .cuboContainer .cuboWrapper .bottom {
-      position: absolute;
-      background-color: #CC3666;
-      transform: translateY(45px) rotateX(-90deg);
-      -webkit-transform: translateY(45px) rotateX(-90deg); }
-    .cuboContainer .cuboWrapper .right {
-      position: absolute;
-      background-color: #4BCCA1;
-      transform: translateX(45px) rotateY(90deg);
-      -webkit-transform: translateX(45px) rotateY(90deg); }
-    .cuboContainer .cuboWrapper .left {
-      position: absolute;
-      background-color: #AAFFE3;
-      transform: translateX(-45px) rotateY(-90deg);
-      -webkit-transform: translateX(-45px) rotateY(-90deg); }
-
-.but {
-  border-radius: 50px;
-  ont-size: 13px; }
-  .but:hover {
-    border: 2px solid;
-    background-color: whitesmoke;
-    transition: 2s;
-    font-size: 13px; }
-
-.sectionTitle {
-  font-family: "Montserrat";
-  font-size: 35px;
-  letter-spacing: 1.5px;
-  text-transfor: uppercase;
-  color: #333; }
-
-.subtitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
-  font-size: 20px;
-  font-family: "Montserrat", serif;
-  padding: 20px 10px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px; }
-
-.subtitulo2 {
-  font-size: 14px;
-  font-family: "Montserrat", serif;
-  margin: 0;
-  padding: 5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px; }
-
-.parrafo {
-  font-family: "Raleway", serif;
-  font-size: 16px;
-  font-weight: 300;
-  margin-bottom: 5px; }
-
-.parrafo2 {
-  font-family: "Raleway", serif;
-  font-size: 13px;
-  line-height: 21px;
-  margin-bottom: 5px; }
-
-body {
-  background-color: whitesmoke; }
-  body .triangle {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%; }
-  body .triangle2 {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%; }
-  body .portada {
-    height: 100vh;
-    background: url("../imagenes/web/portada.jpg");
-    background-size: contain;
-    position: relative;
-    padding: 5px; }
-    body .portada .blackboardMenu {
-      position: absolute;
-      color: whitesmoke;
-      font-weight: 700;
-      left: 230px;
-      top: 150px;
-      opacity: 0.5; }
-      body .portada .blackboardMenu ul {
-        list-style: none;
-        cursor: pointer; }
-        body .portada .blackboardMenu ul li {
-          padding: 8px;
-          font-family: 'Libre Franklin', sans-serif;
-          font-size: 15px; }
-          body .portada .blackboardMenu ul li:hover {
-            color: #66E7C2;
-            transition: 1s; }
-  body .broomNav {
-    text-align: center; }
-    body .broomNav .logo {
-      height: 80px;
-      width: 80px;
-      display: inline;
-      padding: 10px; }
-  body #chatIcon {
-    cursor: pointer;
-    opacity: 0.90;
-    z-index: 999999;
-    height: 55px;
-    width: 55px;
-    background-color: #0176FF;
-    padding: 10px;
-    border-radius: 10px;
-    position: fixed;
-    bottom: 60px;
-    left: 40px;
-    transition: all ease-in 0.5s; }
-    body #chatIcon:hover {
-      opacity: 0.99;
-      transition: all ease-in-out 0.5s; }
-    body #chatIcon .wrapIcon {
-      position: absolute;
-      font-size: 27.5px;
-      color: whitesmoke;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
-    @media screen and (max-weight: 300px) {
-      body #chatIcon {
-        height: 35px;
-        border: 1px solid white;
-        width: 17px;
-        left: 20px;
-        background-color: red; } }
-  body #chatBot {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    bottom: 0;
-    right: 0;
-    height: 100vh;
-    width: 350px;
-    background-color: #FFFFFF;
-    opacity: 0.90;
-    border-radius: 5px; }
-    @media screen and (max-width: 400px) {
-      body #chatBot {
-        width: 100%;
-        opacity: 0.95;
-        transition: 2s; } }
-    body #chatBot #chatBody {
-      border: 1px solid whitesmoke;
-      height: 82%;
-      width: 100%;
-      padding: 20px;
-      overflow-y: scroll; }
-      body #chatBot #chatBody .imgChat {
-        width: 100px; }
-      body #chatBot #chatBody .msg {
-        padding: 10px;
-        color: #333;
-        border-radius: 10px;
-        font-size: 14px;
-        margin: 0;
-        margin-bottom: 5px;
-        width: 85%; }
-        body #chatBot #chatBody .msg input {
-          font-size: 13px; }
-      body #chatBot #chatBody .msgBroom {
-        background-color: #EEEEEE;
-        float: left; }
-      body #chatBot #chatBody .msgClient {
-        background-color: #56BFDC;
-        color: whitesmoke;
-        float: right; }
-    body #chatBot #chatInput {
-      height: 8%;
-      border-top: 1px solid #56BFDC; }
-      body #chatBot #chatInput input {
-        width: 100%;
-        border: none;
-        font-size: 1rem;
-        height: 80%;
-        line-height: 1.2;
-        padding: .75rem 1rem;
-        margin-bottom: .5rem; }
-      body #chatBot #chatInput .form-control {
-        border-radius: 0; }
-    body #chatBot #minimize {
-      margin: 0;
-      height: 10%;
+.portfolioSeccion {
+  overflow: hidden;
+  background: linear-gradient(135deg, #6f42c1 0%, #4582EC 100%);
+  background: whitesmoke;
+  height: 550px; }
+  .portfolioSeccion .imageWrapper {
+    width: 400%;
+    height: 100%;
+    padding: 50px;
+    perspective: 300px; }
+    .portfolioSeccion .imageWrapper .image {
+      transition: all ease-in-out 1.5s;
+      width: 500px;
       padding: 10px;
-      background-color: white;
-      border: 1px solid whitesmoke;
-      color: #333;
-      text-align: center;
-      font-size: 12px;
-      vertical-align: center;
-      border-radius: 10px 10px 0px 0px; }
-      body #chatBot #minimize p {
-        display: inline; }
-      body #chatBot #minimize i {
-        float: right;
-        font-size: 20px;
-        padding: 5px;
-        color: grey; }
-  body .servicios {
-    transition: 1s;
-    text-align: center;
-    background-color: whitesmoke; }
-    body .servicios .sectionTitle1 {
-      font-family: "Quicksand";
-      letter-spacing: -1px; }
-    body .servicios .servicioMenu {
-      color: #333; }
-      @media screen and (max-weight: 900px) {
-        body .servicios .servicioMenu {
-          font-size: 1px;
-          color: red;
-          border: 1px solid blue; } }
-      body .servicios .servicioMenu .servicioList {
-        list-style: none;
-        padding: 0px; }
-        body .servicios .servicioMenu .servicioList .servicioItem {
-          display: inline-block;
-          padding: 10px 10px 10px 0px;
-          font-size: 15px;
-          cursor: pointer;
-          color: grey;
-          letter-spacing: 1.2px;
-          font-family: "Raleway"; }
-    body .servicios .servicioWrapper {
-      height: 3300px;
-      overflow: hidden;
-      position: relative;
-      transition: 0.5s; }
-      body .servicios .servicioWrapper .slide {
-        position: absolute;
-        height: 700px;
-        top: 0;
-        left: 0;
-        color: #333; }
-        body .servicios .servicioWrapper .slide .servicioEncabezado {
-          position: relative;
-          background-color: whitesmoke;
-          background: url("../imagenes/web/webService.png");
-          background-size: cover;
-          min-height: 330px;
-          color: white; }
-          body .servicios .servicioWrapper .slide .servicioEncabezado img {
-            height: 270px; }
-          body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText {
-            width: 80%;
-            position: absolute;
-            bottom: 8%;
-            left: 50%;
-            transform: translate(-50%, 0); }
-            body .servicios .servicioWrapper .slide .servicioEncabezado .encabezadoText .servicioTitulo {
-              font-family: "Permanent marker" , "Serif";
-              color: #333;
-              font-size: 25px;
-              z-index: 9999; }
-        body .servicios .servicioWrapper .slide .servicioInfo {
-          position: relative; }
-          body .servicios .servicioWrapper .slide .servicioInfo .subtitulo, body .servicios .servicioWrapper .slide .servicioInfo .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo, body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .servicioInfo .porfolioTitulo {
-            padding: 10px 0px; }
-          body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper {
-            padding: 30px 100px;
-            margin: 0; }
-            @media screen and (max-width: 900px) {
-              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper {
-                padding: 15px;
-                text-align: center; } }
-            body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem {
-              text-align: left;
-              padding: 10px; }
-              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem img {
-                padding: 10px;
-                text-align: right; }
-              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .infoIcon {
-                height: 65px; }
-              body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test {
-                font-weight: 300;
-                color: #56BFDC;
-                cursor: pointer; }
-                body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem .test .icon {
-                  color: #56BFDC;
-                  font-size: 13px; }
-              @media screen and (max-width: 900px) {
-                body .servicios .servicioWrapper .slide .servicioInfo .serviceInfoWrapper .infoItem {
-                  text-align: center; } }
-        body .servicios .servicioWrapper .slide .servicioHerramientas {
-          -webkit-filter: grayscale(100%);
-          position: relative;
-          color: whitesmoke;
-          padding: 70px 50px;
-          background-color: #333;
-          background: linear-gradient(10%, #333 50%, #666666 10%); }
-          body .servicios .servicioWrapper .slide .servicioHerramientas .herramientasWrapper {
-            -webkit-filter: greyscale(100%);
-            width: 80%;
-            margin: 0 auto;
-            padding: 30px; }
-            body .servicios .servicioWrapper .slide .servicioHerramientas .herramientasWrapper .skillItem .skillImg {
-              padding: 3px;
-              height: 50px;
-              filter: greyscale(100%); }
-        body .servicios .servicioWrapper .slide .servicioPortfolio {
-          padding: 90px; }
-          @media screen and (max-width: 600px) {
-            body .servicios .servicioWrapper .slide .servicioPortfolio {
-              padding: 20px; } }
-          body .servicios .servicioWrapper .slide .servicioPortfolio .retro {
-            padding: 10px 0px;
-            background-color: #333;
-            color: whitesmoke; }
-            @media screen and (max-width: 300px) {
-              body .servicios .servicioWrapper .slide .servicioPortfolio .retro {
-                background-color: transparent;
-                color: #333; } }
-          @media screen and (max-width: 600px) {
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper {
-              padding: 5px; } }
-          body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
-            overflow: hidden;
-            cursor: pointer;
-            padding: 0px;
-            boxing-size: border-box;
-            height: 300px;
-            margin-bottom: 20px; }
-            @media screen and (max-width: 600px) {
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem {
-                padding: 20px; } }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover img {
-              transition: all ease-in 0.5s;
-              transform: scale(1.02) perspective(300px) translateY(-200px);
-              transform: rotateY(-5deg); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .transparencia {
-              background-color: rgba(51, 51, 51, 0.9); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem:hover .portfolioText {
-              visibility: visible;
-              transition: all  1 ease-out; }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem img {
-              z-index: 0;
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              transition: all 0.15s ease-out;
-              transform: scale(1.12); }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText {
-              visibility: hidden;
-              z-index: 20;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              width: 80%;
-              margin: 0 auto;
-              position: absolute;
-              color: whitesmoke; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .icon {
-                font-size: 35px;
-                color: whitesmoke; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .porfolioTitulo {
-                color: #56BFDC;
-                margin: 0;
-                font-weight: 700; }
-              body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .portfolioText .portfolioDescripcion {
-                color: whitesmoke;
-                margin: 0;
-                padding: 2px; }
-            body .servicios .servicioWrapper .slide .servicioPortfolio .portfolioWrapper .portfolioItem .transparencia {
-              z-index: 10;
-              position: absolute;
-              height: 100%;
-              width: 100%;
-              top: 0;
-              left: 0; }
-      body .servicios .servicioWrapper .desarrolloWeb {
-        transition: 1.5s;
-        width: 100%;
-        box-sizing: border-box; }
-      body .servicios .servicioWrapper .desarrolloMobile {
-        left: -100%;
-        transition: 1.5s;
-        width: 100%; }
-      body .servicios .servicioWrapper .render {
-        left: -200%;
-        transition: 1.5s;
-        width: 100%; }
-  body .members {
-    background-color: whitesmoke; }
-    body .members .cuadrantWrapper {
-      padding: 70px 250px 10px 250px; }
-      @media screen and (max-width: 800px) {
-        body .members .cuadrantWrapper {
-          padding: 40px;
-          text-alignt: center; } }
-    body .members #member1 {
-      position: relative;
-      background-color: #333;
-      color: whitesmoke;
-      text-align: right; }
-      body .members #member1 #cuadrante2 {
-        padding-top: 70px;
-        box-sizing: border-box;
-        padding: 70px 10px; }
-        @media screen and (max-width: 800px) {
-          body .members #member1 #cuadrante2 {
-            padding: 20px; } }
-        body .members #member1 #cuadrante2 .nombretrabajo {
-          color: #66E7C2; }
-          @media screen and (max-width: 800px) {
-            body .members #member1 #cuadrante2 .nombretrabajo {
-              font-size: 17px;
-              transition: 1s;
-              text-alignt: center; } }
-    body .members #member2 {
-      text-align: right; }
-      body .members #member2 .cuadranteWrapper {
-        padding: 0px 250px 10px 250px; }
-        @media screen and (max-width: 800px) {
-          body .members #member2 .cuadranteWrapper {
-            padding: 40px;
-            text-alignt: center; } }
-      body .members #member2 #cuadrante3 {
-        padding: 70px 10px;
-        box-sizing: border-box; }
-        body .members #member2 #cuadrante3 .nombretrabajo {
-          color: #56BFDC; }
-        body .members #member2 #cuadrante3 .icon {
-          color: #333; }
-          body .members #member2 #cuadrante3 .icon:hover {
-            color: #56BFDC; }
+      display: inline-block;
+      opacity: 0.1;
+      transform: translateZ(-30px); }
+
+.miembros {
+  background-color: whitesmoke; }
+  .miembros .miembrosWrapper {
+    padding: 40px; }
+    .miembros .miembrosWrapper .nombre {
+      font-size: 17px; }
+    .miembros .miembrosWrapper .parrafo1 {
+      font-size: 14px; }
+    .miembros .miembrosWrapper .charlie .avatarWrapp {
+      height: 90%;
+      margin: auto; }
+      .miembros .miembrosWrapper .charlie .avatarWrapp .avatar {
+        height: 230px; }
+    .miembros .miembrosWrapper .charlie .descripcion .nombretrabajo {
+      color: #66E7C2; }
+    .miembros .miembrosWrapper .tomi .avatarWrapp {
+      height: 90%;
+      margin: auto; }
+      .miembros .miembrosWrapper .tomi .avatarWrapp .avatar {
+        height: 230px; }
+    .miembros .miembrosWrapper .tomi .descripcion .nombretrabajo {
+      color: #56BFDC; }
 
 /*# sourceMappingURL=estilos.css.map */
