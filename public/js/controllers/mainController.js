@@ -1,147 +1,64 @@
 
-// CONFIGURACION FIREBASE
-  var config = {
-    apiKey: "AIzaSyB_pK2rypETX2rroDgmdVZ2G6S8cocRGF0",
-    authDomain: "broomdevelop.firebaseapp.com",
-    databaseURL: "https://broomdevelop.firebaseio.com",
-    projectId: "broomdevelop",
-    storageBucket: "broomdevelop.appspot.com",
-    messagingSenderId: "478555603925"
-  };
-
-// INICIA FIREBASE
-firebase.initializeApp(config);
-
 // ANGULAR APP
 app = angular.module("myApp" , []);
 
-app.controller("mainController" , function($scope , google , chatbot){         
+app.controller("mainController" , function($scope , google){    
 
-  $scope.servicios = {
-    charlie:[
-    {nombre:"Responsive Design" , 
-    descripcion: "Diseño que se adapta a cualquier dispositivo: notebooks, pc, tablets y moviles!",
-    image:"022-management.png",
-    prueba:true
-  },
-      {nombre:"UX Design" , 
-    descripcion: "Buscamos apasionadamente que la experiencia de usuario sea lo mejor",
-    image:"052-user-1.png",
-    prueba:false
-  },
-      {nombre:"Socios Digitales" , 
-    descripcion: "Nos interesa convertirnos en sus socios digitales, entendiendo sus necesidades y blabla",
-    image:"003-deal.png",
-    prueba:false
-  },
-      {nombre:"Chatbots" , 
-    descripcion: "Los chatbots son herramientas de gran utilidad ya que muchas veces suplen a la persona blabla",
-    image:"048-forum.png",
-    prueba:true
-  },
-      {nombre:"Base de datos tiempo real" , 
-    descripcion: "Usamos firebase! una herramienta de google para almacenar e interactuar con datos en tiempo real",
-    image:"016-computing-cloud.png",
-    prueba:true
-  },
-      {nombre:"Contenido Autoadministrable (CMS)" , 
-    descripcion: "Maneja tus productos a tu forma, edita y elimina!",
-    image:"033-faq.png",
-    prueba:true
-  }
+$scope.userInfo;     
 
+$scope.buscarUsuario = function(clave){
+  var clave = $(".userCode").val();
+   var usuarioData = $scope.usuarios.find(function(item){
+    return item.clave === clave
+   })
 
-    ],
-    tomy:[]
-  }
+ $scope.userInfo = usuarioData;
+} 
 
-  $scope.skills = {
+google.monitor("ordenes");
 
-    charlie:[
-    {nombre:"Javascript" , 
-    descripcion: "Diseño que se adapta a cualquier dispositivo: notebooks, pc, tablets y moviles!",
-    image:"javascript.png",
-  },
-      {nombre:"Jquery" , 
-    descripcion: "Buscamos apasionadamente que la experiencia de usuario sea lo mejor",
-    image:"jquery.png",
-  },
-      {nombre:"Bootrstrap" , 
-    descripcion: "Nos interesa convertirnos en sus socios digitales, entendiendo sus necesidades y blabla",
-    image:"bootstrap.png",
-  },
-      {nombre:"NodeJs" , 
-    descripcion: "Los chatbots son herramientas de gran utilidad ya que muchas veces suplen a la persona blabla",
-    image:"node.png",
-  },
-      {nombre:"AngularJs" , 
-    descripcion: "Usamos firebase! una herramienta de google para almacenar e interactuar con datos en tiempo real",
-    image:"angular.png",
-  },
-      {nombre:"MongoDb" , 
-    descripcion: "Maneja tus productos a tu forma, edita y elimina!",
-    image:"mongo",
-  },
-     {nombre:"Firebase" , 
-    descripcion: "Maneja tus productos a tu forma, edita y elimina!",
-    image:"firebase.png",
-  }
+$scope.crearOrden = function(coleccion){
+  var ordenNum = $(".ordenNum").val() ;
+  var empresario = $(".empresario").val() ;
+  var razon = $(".razon").val() ;
+  var comentario = $(".comentario").val() ;
 
-
-    ],
-    tomy:[]
-  }
-
-  $scope.portfolio = {
-
-    charlie:[
-    {nombre:"Ingenio Técnico" , 
-    categoria: "Consultora RRHH",
-    tipo: "Institucional / Landing Page / CMS ",
-    image:"ingenioCapture.png",
-  },
-     {nombre:"AutosMinn" , 
-      categoria: "Concesionario",
-       tipo: "Institucional / Landing Page / CMS ",
-      image:"ingenioCapture.png",
-  },
-      {nombre:"Sistema RRHH" , 
-      categoria: "Micrositio",
-       tipo: "Aplication Web / CMS ",
-      image:"ingenioCapture.png",
-   },
-      {nombre:"Portfolio" , 
-      categoria: "Portfolios",
-       tipo: "Lading Page",
-      image:"ingenioCapture.png",
-   }
-
-    ],
-    tomy:[]
-  }
-
-
-    $scope.initApp = function(){
-      chatbot.init();
+  var ordenDes = {
+    fecha: Date(),
+    usuario:$scope.userInfo.nombre,
+    empresario:empresario,
+    razon:razon,
+    comentario:comentario,
+    faseUno:{
+      finanzas:false,
+      cobranzas:false,
+      comercial:false,
+    },
+    faseDos:{
+      finanzas:false,
+      cobranzas:false,
+      comercial:false,
     }
-  
-    $scope.conversacion = function(e){
-        e = event.which;
-        if (e === 13){
-          // CONSULTA CLIENTE
-          var msg = $("#chatInputBox").val();
-          //agrega mensaje al chat
-          chatbot.agregarMsg(msg , "cliente") 
+  }
 
-          //RESPUESTA BROOM
-            chatbot.botReply(msg)
+ google.agregar("ordenes",  ordenNum.toString(), ordenDes);
+}
 
 
-      }
-    }
+$scope.leerOrdenes = function(){
+ google.verOrdenes();
+}
 
+$scope.usuarios = [
+{nombre:"Astrid Van de Vorde" , acceso:"adm" , sector:"comercial", clave: "VAN321"},
+{nombre:"Luis Cifuentes" , acceso:"adm" , sector:"legales", clave: "LEG321"},
+{nombre:"Fabian Berria" , acceso:"vis" , sector:"legales", clave: "LEG321"},
+{nombre:"Facundo Coxe" , acceso:"adm" , sector:"cobranzas", clave: "VAN321"},
+{nombre:"Agustín Albesa" , acceso:"adm" , sector:"cobranzas", clave: "VAN321"},
+{nombre:"Nicolas Lencina" , acceso:"vis" , sector:"cobranzas", clave: "VAN321"},
+{nombre:"Totaro, Claudia" , acceso:"adm" , sector:"comercial", clave: "VAN321"},
+{nombre:"Minnelli, Carlos" , acceso:"adm" , sector:"comercial", clave: "0963"},
 
-
-
+]
 
 })
