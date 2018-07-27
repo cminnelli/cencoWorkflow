@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*LISTENING PORT*/
 app.listen(port, function(req , res){
-	console.log("Listening Broom Web: " + port);
+	console.log("Listening Cenco Workflow: " + port);
 })
 
 /*INDEX ROUTES*/
