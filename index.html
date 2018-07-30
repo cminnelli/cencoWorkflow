@@ -10,15 +10,15 @@
 
 	<link href='imagenes/web/LOGO1.png' rel='shortcut icon' type='image/png'>
 
-	<!-- Compiled and minified CSS -->
-<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
-
-	<!-- Compiled and minified JavaScript -->
-<!-- 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script> -->
-	        
-
 	<!-- JQUERY -->
 	<script src="/libs/jquery/jquery.js"></script>
+
+	<!-- BOOTSTRAP 4 -->
+	<script src="/libs/bootstrap4/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/libs/bootstrap4/css/bootstrap.css">
+
+	<!-- MOMENT JS -->
+	<script src="/libs/moment/moment.min.js"></script>
 
 
 	<!-- FIREBASE SCRIPT -->
@@ -39,11 +39,48 @@
 section{
 	margin-bottom:40px;
 }
+*{
+	font-size:13px;
+}
 </style>
-<body ng-init="initWorkflow()" ng-app="myApp" ng-controller="mainController">
-<section class="moduloAcceso">
-	<input type="text" class="userCode">
-	<button ng-click="buscarUsuario()">Acceder Workflow</button>
+<body ng-init="initWorkflow()" ng-app="myApp" ng-controller="mainController" ng-cloak>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<section class="moduloAcceso container">
+<h3>Acceso</h3>
+	<div class="form-group">
+		<input type="password" class="userCode form-control" placeholder="Codigo de Usuario">
+	</div>	
+
+	<button ng-click="buscarUsuario()" class="btn btn-outline-info">Acceder Workflow</button>
 	<div>
 		<h5>{{userInfo.nombre}}</h5>
 		<h5>{{userInfo.acceso}}</h5>
@@ -52,52 +89,96 @@ section{
 	</div>
 </section>
 
-<section class="moduloCarga">
+<section class="moduloCarga container">
 <h3>Carga de ordenes</h3>
+	<div class="row">
+		<div class="form-group col-md-6 offset-md-6">
+			<input class="ordenNum form-control" placeholder="orden">
+		</div>
+		<div class="form-group col-md-4 ">
+			<input type="text" class="empresario form-control" placeholder="empresario">
+		</div>
+		<div class="form-group col-md-4">
+			<input type="text" class="razon form-control" placeholder="razon social">
+		</div>
+		<div class="form-group col-md-4">
+			<input type="text" class="espacio form-control" placeholder="Espacio">
+		</div>
+		<div class="form-group col-md-12">
+			<input type="text" class="comentario form-control" placeholder="comentario">
+		</div>
+		
+	</div>
 
-	<input type="text" class="ordenNum" placeholder="orden">
-	<input type="text" class="empresario" placeholder="empresario">
-	<input type="text" class="razon" placeholder="razon social">
-	<input type="text" class="comentario" placeholder="comentario">
-	<br>
-	<button ng-click="crearOrden()">Crear Orden</button>
+	<button ng-click="crearOrden()" class="btn btn-outline-dark">Crear Orden</button>
 	
 </section>
 
-<section class="moduloAprobacion">
+<section class="moduloAprobacion container">
 	
-	<table>
-	  <thead>
+	<table class="table">
+	  <thead class="thead-light">
+	    <tr>
+	        <th></th>
+	        <th></th>	        
+	        <th></th>
+	        <th></th>
+	        <th></th>
+	        <th></th>
+	        <th colspan="3">FASE1</th>
+	        <th colspan="3">FASE2</th>
+
+	    </tr>
 	    <tr>
 	        <th>Fecha</th>
-	        <th>Orden</th>	        
+	        <th>Orden</th>
+	        <th>Espacio</th>		        
 	        <th>Usuario</th>
 	        <th>Empresario</th>
 	        <th>Razon</th>
-	        <th>Fase 1</th>
-	        <th>Fase 2</th>
-	         <th>guardar</th>
+	        <th>COM</th>
+	        <th>FIN</th>
+	        <th>LEG</th>
+
+	        <th>FAC</th>
+	        <th>LEG</th>
+	        <th>Dias</th>
+
 
 	    </tr>
 	  </thead>
 
 	  <tbody>
 	    <tr ng-repeat="o in ordenes">
-	      <td>{{o.fecha}}</td>
-	         <td>{{o.nro}}</td>
+	      <td>{{retFecha(o.fecha)}}</td>
+         <td>{{o.nro}}</td>
+	     <td>{{o.espacio}}</td>
 	      <td>{{o.usuario}}</td>
 	      <td>{{o.empresario}}</td>
 	      <td>{{o.razon}}</td>
-	      <td id="faseUno ">
-	      	<input ng-disabled="habilitar('comercial')"  ng-checked={{o.faseUno.comercial.estado}}  ng-click = "guardarOrden($event , o.nro)" class="faseUno comercial" type="checkbox">
-			<input ng-disabled="habilitar('finanzas')"  ng-checked={{o.faseUno.finanzas.estado}} ng-click = "guardarOrden($event , o.nro)"  class="faseUno finanzas" type ="checkbox">
-			<input ng-disabled="habilitar('legales')"  ng-checked={{o.faseUno.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"  class="faseUno legales" type="checkbox">
+	
+	  	 <td>   	
+	      	<input class="faseUno comercial"  ng-checked={{o.faseUno.comercial.estado}}  ng-click = "guardarOrden($event , o.nro)" type="checkbox">
 	      </td>
 
-            <td id="faseDos" ">
-            	<input ng-disabled="habilitar('facturacion')"   ng-checked={{o.faseDos.comercial.estado}} ng-click = "guardarOrden($event , o.nro)"  class="faseDos facturacion" type="checkbox">
-      		<input ng-disabled="habilitar('legales')"  ng-checked={{o.faseDos.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"  class="faseDos legales" type="checkbox">
-            </td>
+	      <td>
+			<input class="faseUno finanzas"  ng-checked={{o.faseUno.finanzas.estado}} ng-click = "guardarOrden($event , o.nro)"   type ="checkbox">	      	
+	      </td>
+
+	      <td>
+			<input class="faseUno legales"   ng-checked={{o.faseUno.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"   type="checkbox">	      	
+	      </td>
+
+
+		<td>
+        	<input   class="faseDos facturacion"  ng-checked={{o.faseDos.comercial.estado}} ng-click = "guardarOrden($event , o.nro)" type="checkbox">
+			
+		</td>
+		<td>
+      		<input class="faseDos legales" ng-checked={{o.faseDos.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"   type="checkbox">			
+		</td>
+		<td>{{tiempo(o.fecha)}}</td>
+
                   
 
 	    </tr>
