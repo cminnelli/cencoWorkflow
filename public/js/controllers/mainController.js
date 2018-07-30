@@ -24,8 +24,6 @@ $scope.buscarUsuario = function(clave){
 
 } 
 
-
-
 $scope.crearOrden = function(coleccion){
   var ordenNum = $(".ordenNum").val() ;
   var empresario = $(".empresario").val() ;
@@ -87,8 +85,8 @@ $scope.habilitar = function(sector, sectorUsuario){
 
 $scope.guardarOrden = function(e , orden){
   var clases = e.target.className.split(" ");
-  var ref = orden + "/" + clases[0]  + "/" +  clases[1] + "/estado"  ;
- google.agregar("ordenes" , ref , event.target.checked )
+  var ref = orden + "/" + clases[0]  + "/" +  clases[1];
+ google.agregar("ordenes" , ref , {estado:event.target.checked , aprobacion: Date()})
   console.log(ref)
   console.log(orden)
 }
