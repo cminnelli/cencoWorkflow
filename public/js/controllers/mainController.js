@@ -11,9 +11,11 @@ $scope.ordenes;
 $scope.initWorkflow = function(){
       google.monitor("ordenes" , function(data){
         $scope.ordenes = data;
-      });
-   
+        $scope.$apply();
+      });      
 }
+
+
 
 $scope.retFecha = function(fecha){
  var nf = moment(fecha).format('DD-MM-YYYY');
@@ -62,40 +64,33 @@ $scope.crearOrden = function(coleccion){
     razon:razon,
     espacio:espacio,
     comentario:comentario,
-    faseUno:{
-      comercial:{
-        estado: false,
-        aprobacion:"",
-        comentario:"",
+    comercial:{
+      E:0,
+      A0:{
+        fecha:"",      
       },
-      finanzas:{
-        estado: false,
-        aprobacion:"",
-        comentario:""
-      },
-      legales:{
-        estado: false,
-        aprobacion:"",
-        comentario:""
-      }
-
     },
-    faseDos:{
-      facturacion:{
-        estado: false,
-        aprobacion:"",
-        comentario:""
+
+    finanzas:{
+      E:0,
+      A0:{
+        fecha:"",      
+      },
+    },
+
+    legales:{
+      E:0,
+      A0:{
+        fecha:"",      
       },
 
-      legales:{
-        estado: false,
-        aprobacion:"",
-        comentario:""
-      }
+    }
 
-    },  }
+
+  }  
 
  google.agregar("ordenes",  ordenNum.toString(), ordenDes);
+
 }
 
 
@@ -108,12 +103,49 @@ $scope.habilitar = function(sector, sectorUsuario){
   }
 }
 
+$scope.cambiarEstado = function(orden , departamento , estado){
+alert(orden + departamento + estado)
+google.actualizar("ordenes" , orden + "/" + departamento + "/A" + estado , {fecha: Date.now()})
+google.actualizar("ordenes" , orden + "/" + departamento , {E: estado + 1})
+  // google.monitor("ordenes" , function(data){
+  //   $scope.ordenes = data;
+  //   $scope.$apply();
+  // });    
 
-$scope.guardarOrden = function(e , orden){
-  var clases = e.target.className.split(" ");
-  var ref = orden + "/" + clases[0]  + "/" +  clases[1];
-  google.agregar("ordenes" , ref , {estado:event.target.checked , aprobacion: Date.now()})
+}
 
+
+// $scope.guardarOrden = function(e , orden){
+//   var clases = e.target.className.split(" ");
+//   var ref = orden + "/" + clases[0]  + "/" +  clases[1];
+//   google.agregar("ordenes" , ref , {estado:event.target.checked , aprobacion: Date.now()})
+// }
+
+
+
+$scope.tareas = {
+  comercial:[
+  {ord:1 , tarea:"Enviar Documentacion" },
+  {ord:2 , tarea:"Eniar Borrador" },
+  {ord:3 , tarea:"Concentrar Informacion" },
+  {ord:4 , tarea:"Concentrar Informacion" }
+  ],
+    finanzas:[
+  {ord:1 , tarea:"Enviar Valores" },
+  {ord:2 , tarea:"Negociando deuda" },
+  {ord:3 , tarea:"Deuda Conciliada" },
+  {ord:3 , tarea:"Aprobacion por sistema" }
+
+
+  ],
+    legales:[
+  {ord:1 , tarea:"Analisis de informacion legal" },
+  {ord:2 , tarea:"Aprobacion por sistema" },
+  {ord:3 , tarea:"Concentrar Informacion" },
+  {ord:4 , tarea:"Aprobacion por sistema" },
+
+
+  ]
 }
 
 

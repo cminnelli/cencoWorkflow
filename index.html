@@ -140,8 +140,6 @@ section{
 	        <th>FIN</th>
 	        <th>LEG</th>
 
-	        <th>FAC</th>
-	        <th>LEG</th>
 	        <th>Dias</th>
 
 
@@ -156,8 +154,11 @@ section{
 	      <td>{{o.usuario}}</td>
 	      <td>{{o.empresario}}</td>
 	      <td>{{o.razon}}</td>
+	      <td><button ng-click="cambiarEstado(o.nro , 'comercial' , o.comercial.E)" class="btn btn-success">{{tareas.comercial[o.comercial.E].tarea}}</button></td>
+	      <td><button class="btn btn-info">{{tareas.finanzas[o.finanzas.E].tarea}}</button></td>
+	      <td><button class="btn btn-danger">{{tareas.legales[o.legales.E].tarea}}</button></td>
 	
-	  	 <td>   	
+<!-- 	  	 <td>   	
 	      	<input class="faseUno comercial"  ng-checked={{o.faseUno.comercial.estado}}  ng-click = "guardarOrden($event , o.nro)" type="checkbox">
 	      </td>
 
@@ -168,20 +169,18 @@ section{
 	      <td>
 			<input class="faseUno legales"   ng-checked={{o.faseUno.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"   type="checkbox">	      	
 	      </td>
+ -->
 
-
-		<td>
+<!-- 		<td>
         	<input   class="faseDos facturacion"  ng-checked={{o.faseDos.comercial.estado}} ng-click = "guardarOrden($event , o.nro)" type="checkbox">
 			
 		</td>
-		<td>
-      		<input class="faseDos legales" ng-checked={{o.faseDos.legales.estado}}  ng-click = "guardarOrden($event , o.nro)"   type="checkbox">			
-		</td>
+
 		<td>{{tiempo(o.fecha)}}</td>
 
                   
 
-	    </tr>
+	    </tr> -->
 	    
 	  </tbody>
 	</table>

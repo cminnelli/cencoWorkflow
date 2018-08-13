@@ -29,7 +29,6 @@ this.monitor = function(ref , cb){
    db.on('value', function(snapshot) {
    	var data = snapshot.val()
    	cb(data)
-    console.log(data);
   });
 }
 
