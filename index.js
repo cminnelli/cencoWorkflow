@@ -26,6 +26,12 @@ app.get("/" , function(req,res){
 	res.sendFile(path.join(__dirname , "index.html"))
 })
 
+app.get("/hola" , function(req,res){
+	console.log(req.name)
+	res.send("saludando a la consolita o a la web¿?")
+})
+
+
 
 app.post("/auth" , function(req,res){
 	var us = req.body.us

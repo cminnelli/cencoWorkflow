@@ -6,19 +6,23 @@ app.controller("mainController" , function($scope , google){
 
 $scope.userInfo;
 $scope.ordenes;
+$scope.orden;
 
 
 $scope.initWorkflow = function(){
       google.monitor("ordenes" , function(data){
-        $scope.ordenes = data;
-        $scope.$apply();
+        google.objarray(data , function(d){
+          $scope.ordenes = d;
+          $scope.$apply();
+        })
+        
       });      
 }
 
 
 
 $scope.retFecha = function(fecha){
- var nf = moment(fecha).format('DD-MM-YYYY');
+ var nf = moment(fecha).format('DD/MM/YY');
  return nf;
 }
 
@@ -28,12 +32,12 @@ $scope.tiempo = function(fecha){
   return nf;
 }
 
-$scope.accesos = function(tipoAcceso){
-
+$scope.accesos = function(tipoAcceso, depto){
   if ( tipoAcceso === "vis"){
-    $("input:checkbox").attr('disabled', true);
+    $(".btn-aprob").attr('disabled', true);
   }else{
-    $("input:checkbox").attr('disabled', false);
+    $(".btn-aprob").attr('disabled', true);
+    $("." + depto).attr('disabled', false);
   
   }
 }
@@ -45,7 +49,7 @@ $scope.buscarUsuario = function(clave){
     return item.clave === clave
    })
     $scope.userInfo = usuarioData;
-    $scope.accesos($scope.userInfo.acceso)
+    $scope.accesos($scope.userInfo.acceso , $scope.userInfo.sector)
 
 } 
 
@@ -54,7 +58,7 @@ $scope.crearOrden = function(coleccion){
   var espacio = $(".espacio").val() 
   var empresario = $(".empresario").val() ;
   var razon = $(".razon").val() ;
-  var comentario = $(".comentario").val() ;
+  //var comentario = $(".comentario").val() ;
 
   var ordenDes = {
     nro:ordenNum,
@@ -63,9 +67,10 @@ $scope.crearOrden = function(coleccion){
     empresario:empresario,
     razon:razon,
     espacio:espacio,
-    comentario:comentario,
+    estado:"En Curso",
     comercial:{
       E:0,
+      comentario:"",
       A0:{
         fecha:"",      
       },
@@ -73,6 +78,7 @@ $scope.crearOrden = function(coleccion){
 
     finanzas:{
       E:0,
+      comentario:"",
       A0:{
         fecha:"",      
       },
@@ -80,6 +86,7 @@ $scope.crearOrden = function(coleccion){
 
     legales:{
       E:0,
+      comentario:"",
       A0:{
         fecha:"",      
       },
@@ -94,6 +101,16 @@ $scope.crearOrden = function(coleccion){
 }
 
 
+$scope.abrirComentario = function(orden){
+  $scope.orden = orden;
+
+}
+
+$scope.dejarComentario = function(departamento , comentario){
+  var orden = $scope.orden.nro;
+  google.actualizar("ordenes" , orden + "/" + departamento , {comentario: comentario})
+}
+
 $scope.habilitar = function(sector, sectorUsuario){
   var sectorUsuario= $scope.userInfo.sector
   if (sector === sectorUsuario){
@@ -104,14 +121,8 @@ $scope.habilitar = function(sector, sectorUsuario){
 }
 
 $scope.cambiarEstado = function(orden , departamento , estado){
-alert(orden + departamento + estado)
 google.actualizar("ordenes" , orden + "/" + departamento + "/A" + estado , {fecha: Date.now()})
 google.actualizar("ordenes" , orden + "/" + departamento , {E: estado + 1})
-  // google.monitor("ordenes" , function(data){
-  //   $scope.ordenes = data;
-  //   $scope.$apply();
-  // });    
-
 }
 
 
@@ -125,24 +136,25 @@ google.actualizar("ordenes" , orden + "/" + departamento , {E: estado + 1})
 
 $scope.tareas = {
   comercial:[
-  {ord:1 , tarea:"Enviar Documentacion" },
-  {ord:2 , tarea:"Eniar Borrador" },
-  {ord:3 , tarea:"Concentrar Informacion" },
-  {ord:4 , tarea:"Concentrar Informacion" }
+  {ord:1 , tarea:"Firma Orden" },
+  {ord:2 , tarea:"Solicitar info Cliente" },
+  {ord:3 , tarea:"Enviar Documentacion" },
+  {ord:4 , tarea:"Primer OK Sistema" },
+  {ord:5 , tarea:"Enviar Borrador" },
+  {ord:6 , tarea:"Dar OK sistema" },
+   {ord:7 , tarea:"Finalizado" }
   ],
     finanzas:[
   {ord:1 , tarea:"Enviar Valores" },
-  {ord:2 , tarea:"Negociando deuda" },
   {ord:3 , tarea:"Deuda Conciliada" },
-  {ord:3 , tarea:"Aprobacion por sistema" }
+  {ord:3 , tarea:"Dar OK sistema" }
 
 
   ],
     legales:[
-  {ord:1 , tarea:"Analisis de informacion legal" },
-  {ord:2 , tarea:"Aprobacion por sistema" },
-  {ord:3 , tarea:"Concentrar Informacion" },
-  {ord:4 , tarea:"Aprobacion por sistema" },
+  {ord:1 , tarea:"Analisis Doc." },
+  {ord:2 , tarea:"Dar OK sistema" },
+
 
 
   ]
